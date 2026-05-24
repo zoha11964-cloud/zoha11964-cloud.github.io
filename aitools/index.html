@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top AI Tools | Best AI Tools Collection 2026</title>
+    <meta name="description" content="Discover the best AI tools for writing, art, video, design and productivity. All popular AI applications in one place for worldwide users.">
+    <meta name="keywords" content="AI tools, best AI tools, AI writing, AI art generator, AI video maker, Canva alternative, AI productivity tools, online AI software">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #121212;
+            --text-color: #e5e5e5;
+            --card-bg: #1e1e1e;
+            --border-color: #333;
+            --tag-bg: #252b38;
+            --tag-text: #8cb4f0;
+            --header-border: #333;
+            --hover-bg: #2a3444;
+        }
+
+        .light-mode {
+            --bg-color: #f5f7fa;
+            --text-color: #333;
+            --card-bg: #ffffff;
+            --border-color: #eee;
+            --tag-bg: #e9f0fb;
+            --tag-text: #2c5282;
+            --header-border: #eee;
+            --hover-bg: #f0f7ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .page-wrap {
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* 隐藏广告侧边栏 */
+        .sidebar-ad {
+            display: none !important;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px 0;
+        }
+
+        .theme-switch {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 999;
+        }
+
+        #toggleBtn {
+            padding: 8px 14px;
+            border: none;
+            border-radius: 24px;
+            cursor: pointer;
+            font-size: 14px;
+            background: var(--card-bg);
+            color: var(--text-color);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .title-wrap {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .title-wrap i {
+            font-size: 2.4rem;
+            color: #8cb4f0;
+        }
+
+        .light-mode .title-wrap i {
+            color: #2c5282;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+        }
+
+        .desc {
+            font-size: 1rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            max-width: 700px;
+            margin: 10px auto 0;
+        }
+
+        /* 隐藏所有内容广告位 */
+        .ad-in-content {
+            display: none !important;
+        }
+
+        .tool-category {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .category-title {
+            font-size: 1.3rem;
+            color: #8cb4f0;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--header-border);
+            text-align: center;
+        }
+
+        .light-mode .category-title {
+            color: #2c5282;
+        }
+
+        /* 工具列表整体居中 */
+        .tool-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tool-item {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            text-align: center;
+            transition: 0.2s ease;
+        }
+
+        .tool-item:hover {
+            background: var(--hover-bg);
+            border-color: #b3d4f5;
+        }
+
+        .tool-item a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .tool-item p {
+            font-size: 0.85rem;
+            color: var(--text-color);
+            opacity: 0.7;
+            margin-top: 5px;
+        }
+
+        .legal-section {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        .legal-section h3 {
+            font-size: 1.1rem;
+            margin: 15px 0 8px;
+            color: #8cb4f0;
+        }
+
+        .light-mode .legal-section h3 {
+            color: #2c5282;
+        }
+
+        .contact-link {
+            color: #8cb4f0;
+            text-decoration: none;
+        }
+
+        .light-mode .contact-link {
+            color: #2c5282;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
+        .seo-tags {
+            margin: 30px 0;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .seo-tags span {
+            display: inline-block;
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 6px 12px;
+            margin: 5px 4px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: var(--text-color);
+            opacity: 0.6;
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-color);
+            margin: 0 8px;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #8cb4f0;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            .theme-switch {
+                top: 10px;
+                left: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="theme-switch">
+        <button id="toggleBtn">
+            <i class="fas fa-sun"></i> Light Mode
+        </button>
+    </div>
+
+    <div class="page-wrap">
+        <aside class="sidebar-ad left">
+            <div class="ad-box">
+                <p>Google Ads Left Sidebar</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <div class="title-wrap">
+                    <i class="fas fa-robot"></i>
+                    <h1>Top AI Tools Collection</h1>
+                </div>
+                <p class="desc">One-stop platform for AI writing, art, video, design and productivity tools. Handpicked popular AI software for global users.</p>
+            </header>
+
+            <div class="ad-in-content">
+                <p>Google Ads Top (In Content)</p>
+            </div>
+
+            <div class="tool-category">
+                <h2 class="category-title">AI Writing & Chat Tools</h2>
+                <div class="tool-list">
+                    <div class="tool-item"><a href="https://chat.openai.com" target="_blank">ChatGPT</a><p>Chat & Content Writing</p></div>
+                    <div class="tool-item"><a href="https://claude.ai" target="_blank">Claude AI</a><p>Long Text & Analysis</p></div>
+                    <div class="tool-item"><a href="https://gemini.google.com" target="_blank">Gemini AI</a><p>Multi-functional AI Assistant</p></div>
+                    <div class="tool-item"><a href="https://www.jasper.ai" target="_blank">Jasper AI</a><p>Marketing Copy Writer</p></div>
+                </div>
+            </div>
+
+            <div class="ad-in-content">
+                <p>Google Ads Middle (Between Categories)</p>
+            </div>
+
+            <div class="tool-category">
+                <h2 class="category-title">AI Art & Design Tools</h2>
+                <div class="tool-list">
+                    <div class="tool-item"><a href="https://www.midjourney.com" target="_blank">Midjourney</a><p>AI Art Generator</p></div>
+                    <div class="tool-item"><a href="https://stablediffusionwebui.com" target="_blank">Stable Diffusion</a><p>Image Creation</p></div>
+                    <div class="tool-item"><a href="https://www.canva.com" target="_blank">Canva</a><p>Graphic & Poster Design</p></div>
+                    <div class="tool-item"><a href="https://labs.openai.com" target="_blank">DALL-E</a><p>Text to Image</p></div>
+                </div>
+            </div>
+
+            <div class="tool-category">
+                <h2 class="category-title">AI Video & Audio Tools</h2>
+                <div class="tool-list">
+                    <div class="tool-item"><a href="https://runwayml.com" target="_blank">Runway ML</a><p>AI Video Editing</p></div>
+                    <div class="tool-item"><a href="https://pika.art" target="_blank">Pika Labs</a><p>AI Video Generation</p></div>
+                    <div class="tool-item"><a href="https://elevenlabs.io" target="_blank">ElevenLabs</a><p>AI Voice & TTS</p></div>
+                    <div class="tool-item"><a href="https://www.descript.com" target="_blank">Descript</a><p>Audio & Video Editor</p></div>
+                </div>
+            </div>
+
+            <div class="ad-in-content">
+                <p>Google Ads Bottom (Before Footer)</p>
+            </div>
+
+            <div class="tool-category">
+                <h2 class="category-title">AI Productivity Tools</h2>
+                <div class="tool-list">
+                    <div class="tool-item"><a href="https://www.notion.so" target="_blank">Notion AI</a><p>Note & Document AI</p></div>
+                    <div class="tool-item"><a href="https://www.deepl.com" target="_blank">DeepL</a><p>Professional Translation</p></div>
+                    <div class="tool-item"><a href="https://www.slidesai.io" target="_blank">Slides AI</a><p>Auto PPT Maker</p></div>
+                    <div class="tool-item"><a href="https://www.grammarly.com" target="_blank">Grammarly</a><p>Grammar & Writing Check</p></div>
+                </div>
+            </div>
+
+            <div class="legal-section" id="about">
+                <h3>About Us</h3>
+                <p>Top AI Tools Collection is a curated directory of the best artificial intelligence tools available online. Our mission is to help users discover reliable AI software for content creation, design, video editing, and productivity. We independently review and list third-party AI applications without bias.</p>
+            </div>
+
+            <div class="legal-section" id="contact">
+                <h3>Contact Us</h3>
+                <p>For business inquiries or feedback, please <a href="mailto:zoha11964@gmail.com" class="contact-link">click here to send us a message</a>.</p>
+                <p>We do not provide technical support for any third-party tools listed on this website.</p>
+            </div>
+
+            <div class="legal-section" id="privacy">
+                <h3>Privacy Policy</h3>
+                <p>We use Google AdSense and cookies to serve personalized ads. We do not collect personal data unless voluntarily provided via contact form. By using this site, you consent to the use of cookies as described in Google’s privacy policy.</p>
+            </div>
+
+            <div class="legal-section" id="terms">
+                <h3>Terms of Service</h3>
+                <p>This website is for informational purposes only. All listed tools belong to their respective owners. We are not affiliated with any third-party AI service. Use of external links is at your own risk.</p>
+            </div>
+
+            <div class="legal-section" id="disclaimer">
+                <h3>Disclaimer</h3>
+                <p>We do not guarantee the accuracy, safety, or quality of any third-party AI tools listed. We are not liable for any loss or damage resulting from the use of external websites or services.</p>
+            </div>
+
+            <div class="seo-tags">
+                <span>AI tools</span><span>Best AI tools 2026</span><span>AI writing tools</span><span>AI art generator</span><span>AI video maker</span><span>Canva design tool</span><span>AI productivity software</span><span>Online AI applications</span><span>AI translation tool</span><span>AI content creator</span>
+            </div>
+
+            <footer>
+                <div class="footer-links">
+                    <a href="#about">About Us</a>
+                    <a href="#contact">Contact Us</a>
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#disclaimer">Disclaimer</a>
+                </div>
+                <p>&copy; 2026 Top AI Tools. All Rights Reserved.</p>
+            </footer>
+        </main>
+
+        <aside class="sidebar-ad right">
+            <div class="ad-box">
+                <p>Google Ads Right Sidebar</p>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('toggleBtn');
+        const body = document.body;
+
+        toggleBtn.addEventListener('click', function () {
+            body.classList.toggle('light-mode');
+            if (body.classList.contains('light-mode')) {
+                this.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
+            } else {
+                this.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+            }
+        });
+    </script>
+</body>
+</html>
