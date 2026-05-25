@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- 主站 calcfincepro.com -->
+  <sitemap>
+    <loc>https://calcfincepro.com/sitemap.xml</loc>
+    <lastmod>2026-05-26</lastmod>
+  </sitemap>
+  <!-- 子域名 aitools -->
+  <sitemap>
+    <loc>https://aitools.calcfincepro.com/sitemap.xml</loc>
+    <lastmod>2026-05-26</lastmod>
+  </sitemap>
+  <!-- 子域名 compress -->
+  <sitemap>
+    <loc>https://compress.calcfincepro.com/sitemap.xml</loc>
+    <lastmod>2026-05-26</lastmod>
+  </sitemap>
+  <!-- 子域名 uk-budget -->
+  <sitemap>
+    <loc>https://uk-budget.calcfincepro.com/sitemap.xml</loc>
+    <lastmod>2026-05-26</lastmod>
+  </sitemap>
+</sitemapindex>
