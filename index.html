@@ -91,7 +91,7 @@
             color: #1a202c;
         }
 
-        /* 导航栏 保持现有极限 & 修复链接 */
+        /* 导航栏 保持现有极限 & 修正链接 */
         .main-nav {
             background: #1a202c;
             padding: 1px 0;
@@ -147,18 +147,19 @@
             }
         }
 
-        /* Smart Tools 模块 方案三高亮样式 + 极限压缩 */
+        /* Smart Tools 模块 方案B：统一色调高亮样式 + 极限压缩 */
         .cross-tools-bar {
             background: #fff;
-            padding: 4px 8px;
-            margin: 0 0 4px;
             border-radius: 10px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            padding: 4px 8px;
+            margin: 0 0 4px;
         }
         .tools-title {
             font-size: 14px;
             color: #2563eb;
-            background: #f0f7ff;
+            background: #eff6ff;
             padding: 2px 0;
             margin-bottom: 0;
             text-align: center;
@@ -280,7 +281,6 @@
             margin-bottom: 0;
             font-weight: 600;
         }
-        /* 副标题已整体删除 */
         .calc-card {
             background: #fff;
             border: 1px solid #e2e8f0;
@@ -291,7 +291,10 @@
             box-shadow: 0 3px 10px rgba(0,0,0,0.05);
         }
 
-        /* Quick-Fill 区域 全间距清零 字号保持不变 */
+        /* Quick-Fill 区域：消除顶部空白 + 按钮间距8px */
+        .quick-fill {
+            margin-top: 0;
+        }
         .quick-fill h3 {
             font-size: 14px;
             color: #2d3748;
@@ -301,7 +304,7 @@
         .quick-buttons {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1px;
+            gap: 8px;
             margin-bottom: 0;
             margin-top: 0;
         }
@@ -723,10 +726,10 @@
 <div class="main-nav">
     <ul class="nav-list">
         <li><a href="/" class="active">Home</a></li>
-        <li><a href="/about-us.html">About Us</a></li>
-        <li><a href="/contact-us.html">Contact Us</a></li>
-        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="/terms-of-service.html">Terms of Service</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/contact.html">Contact Us</a></li>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms of Service</a></li>
         <li><a href="/disclaimer.html">Disclaimer</a></li>
     </ul>
 </div>
@@ -1059,8 +1062,8 @@
             <div class="footer-col">
                 <h4>Legal</h4>
                 <ul>
-                    <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/terms.html">Terms of Service</a></li>
                     <li><a href="/disclaimer.html">Disclaimer</a></li>
                 </ul>
             </div>
