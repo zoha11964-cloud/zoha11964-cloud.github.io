@@ -60,10 +60,10 @@
             display: none;
         }
 
-        /* 1. 顶部品牌栏 极致压缩 + 与导航栏无缝衔接 */
+        /* 1. 顶部品牌栏 极致压缩 */
         header {
             background: #fff;
-            padding: 3px 0;
+            padding: 2px 0;
             margin-bottom: 0;
             border-bottom: 1px solid #e2e8f0;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
@@ -91,10 +91,10 @@
             color: #1a202c;
         }
 
-        /* 2. 导航栏 极致压缩 无上下间距 */
+        /* 2. 导航栏 极致压缩 修复链接 */
         .main-nav {
             background: #1a202c;
-            padding: 2px 0;
+            padding: 1px 0;
             margin-top: 0;
             overflow-x: auto;
         }
@@ -110,7 +110,7 @@
             display: block;
             color: #e2e8f0;
             text-decoration: none;
-            padding: 3px 10px;
+            padding: 2px 8px;
             font-size: 13px;
             border-radius: 4px;
             white-space: nowrap;
@@ -147,20 +147,20 @@
             }
         }
 
-        /* 3. Smart Tools 方案二：淡蓝色质感底色 + 悬浮效果 */
+        /* 3. Smart Tools 上移 + 标题加粗放大 + 卡片再压 */
         .cross-tools-bar {
             background: #fff;
             padding: 6px 10px;
-            margin: 4px 0;
+            margin: 0 0 4px;
             border-radius: 10px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.05);
         }
         .tools-title {
-            font-size: 12px;
+            font-size: 13px;
             color: #475569;
-            margin-bottom: 2px;
+            margin-bottom: 1px;
             text-align: center;
-            font-weight: 600;
+            font-weight: 700;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -175,13 +175,12 @@
             grid-template-columns: repeat(5, 1fr);
             gap: 6px;
         }
-        /* 淡蓝色底色 替代原有灰色，同主色调呼应 */
         .cross-tool-card {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 4px;
-            padding: 3px 6px;
+            padding: 2px 5px;
             background: #eff6ff;
             border-radius: 10px;
             text-decoration: none;
@@ -203,7 +202,7 @@
         .tool-placeholder {
             background: #eff6ff;
             border-radius: 10px;
-            padding: 3px 6px;
+            padding: 2px 5px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
         }
 
@@ -263,22 +262,22 @@
             font-size: 14px;
         }
 
-        /* 4. 蓝色标题栏 极致压缩 主副标题间距为0 */
+        /* 4. 蓝色标题栏 极致压缩 */
         .calc-header {
             background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
             color: #fff;
-            padding: 4px 6px;
+            padding: 2px 4px;
             margin-bottom: 0;
             border-radius: 8px 8px 0 0;
             text-align: center;
         }
         .calc-header h2 {
-            font-size: 17px;
+            font-size: 16px;
             margin-bottom: 0;
             font-weight: 600;
         }
         .calc-header p {
-            font-size: 10px;
+            font-size: 9px;
             opacity: 0.85;
         }
         .calc-card {
@@ -286,25 +285,25 @@
             border: 1px solid #e2e8f0;
             border-top: none;
             border-radius: 0 0 8px 8px;
-            padding: 12px 12px;
+            padding: 10px 12px;
             margin: 0 auto 30px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.05);
         }
 
-        /* 5. Quick-Fill 按钮区 安全压缩 */
+        /* 5. Quick-Fill 按钮区 极致压缩 */
         .quick-fill h3 {
             font-size: 14px;
             color: #2d3748;
-            margin-bottom: 2px;
+            margin-bottom: 1px;
         }
         .quick-buttons {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 3px;
-            margin-bottom: 12px;
+            gap: 2px;
+            margin-bottom: 10px;
         }
         .quick-btn {
-            padding: 3px 6px;
+            padding: 2px 6px;
             border: 1px solid #cbd5e0;
             background: #fff;
             border-radius: 6px;
@@ -321,12 +320,12 @@
             color: #2563eb;
         }
 
-        /* 6. 输入区域 极限收紧间距，输入框本体不改动保证体验 */
+        /* 6. 输入区域 极限收紧间距 */
         .calc-row {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
         .calc-col {
             flex: 1;
@@ -336,7 +335,7 @@
             display: block;
             font-size: 12px;
             color: #4a5568;
-            margin-bottom: 1px;
+            margin-bottom: 0;
             font-weight: 500;
         }
         input, select {
@@ -721,11 +720,11 @@
 <div class="main-nav">
     <ul class="nav-list">
         <li><a href="/" class="active">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact Us</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Service</a></li>
-        <li><a href="#">Disclaimer</a></li>
+        <li><a href="/about-us.html">About Us</a></li>
+        <li><a href="/contact-us.html">Contact Us</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms-of-service.html">Terms of Service</a></li>
+        <li><a href="/disclaimer.html">Disclaimer</a></li>
     </ul>
 </div>
 
@@ -739,7 +738,7 @@
     </aside>
 
     <main>
-        <!-- Smart Tools 淡蓝质感卡片 -->
+        <!-- Smart Tools 优化后模块 -->
         <section class="cross-tools-bar">
             <div class="tools-title">
                 <i class="fa-solid fa-tools"></i>
@@ -771,7 +770,8 @@
                     <div class="quick-buttons">
                         <button class="quick-btn" data-preset="retirement">
                             <i class="fa-solid fa-building-columns"></i> Retirement
-                        </button>
+
+button>
                         <button class="quick-btn" data-preset="home">
                             <i class="fa-solid fa-house"></i> Home Down Payment
                         </button>
@@ -945,8 +945,9 @@
                     </div>
                 </div>
                 <div class="faq-item">
-                    What is the difference between annual and monthly compounding?
-                    <i class="fa-solid fa-chevron-down"></i>
+                    <div class="faq-question">
+                        What is the difference between annual and monthly compounding?
+                        <i class="fa-solid fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
                         Monthly compounding calculates interest every month, while annual compounding calculates once per year. Monthly compounding usually generates slightly higher returns.
@@ -1056,9 +1057,9 @@
             <div class="footer-col">
                 <h4>Legal</h4>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Disclaimer</a></li>
+                    <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="/disclaimer.html">Disclaimer</a></li>
                 </ul>
             </div>
         </div>
