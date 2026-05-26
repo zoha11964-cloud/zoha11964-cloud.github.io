@@ -60,7 +60,7 @@
             display: none;
         }
 
-        /* 顶部品牌栏 保持现有极限 */
+        /* 顶部品牌栏 */
         header {
             background: #fff;
             padding: 2px 0;
@@ -91,7 +91,7 @@
             color: #1a202c;
         }
 
-        /* 导航栏 保持现有极限 & 修正链接 */
+        /* 导航栏 */
         .main-nav {
             background: #1a202c;
             padding: 1px 0;
@@ -147,7 +147,7 @@
             }
         }
 
-        /* Smart Tools 模块 方案B：统一色调高亮样式 + 极限压缩 */
+        /* Smart Tools 模块 */
         .cross-tools-bar {
             background: #fff;
             border-radius: 10px;
@@ -193,7 +193,8 @@
             transition: all 0.2s ease;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
         }
-        .cross-tool-card:hover {
+        .cross-tool-card:hover,
+        .cross-tool-card.active {
             background: #dbeafe;
             color: #2563eb;
             transform: translateY(-1px);
@@ -202,12 +203,6 @@
         .cross-tool-icon {
             font-size: 15px;
             color: #2563eb;
-        }
-        .tool-placeholder {
-            background: #eff6ff;
-            border-radius: 10px;
-            padding: 1px 4px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
         }
 
         .hero-section {
@@ -266,7 +261,7 @@
             font-size: 14px;
         }
 
-        /* 蓝色标题栏：删除副标题 + 极限压缩内边距 */
+        /* 蓝色标题栏 */
         .calc-header {
             background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
             color: #fff;
@@ -291,7 +286,7 @@
             box-shadow: 0 3px 10px rgba(0,0,0,0.05);
         }
 
-        /* Quick-Fill 区域：消除顶部空白 + 按钮间距8px */
+        /* Quick-Fill 区域 */
         .quick-fill {
             margin-top: 0;
         }
@@ -326,7 +321,7 @@
             color: #2563eb;
         }
 
-        /* 输入区域 全局间距极限收紧 */
+        /* 输入区域 */
         .calc-row {
             display: flex;
             flex-wrap: wrap;
@@ -374,9 +369,14 @@
             align-items: center;
             justify-content: center;
             gap: 6px;
+            transition: background 0.2s ease;
         }
         .calc-main-btn:hover {
             background: #1d4ed8;
+        }
+        .calc-main-btn:disabled {
+            background: #93c5fd;
+            cursor: not-allowed;
         }
 
         .result-box {
@@ -759,14 +759,23 @@
                     <i class="fa-solid fa-wand-magic-sparkles cross-tool-icon"></i>
                     <span>AI Tools</span>
                 </a>
-                <div class="tool-placeholder"></div>
-                <div class="tool-placeholder"></div>
-                <div class="tool-placeholder"></div>
+                <a href="https://pdf.calcfincepro.com" class="cross-tool-card">
+                    <i class="fa-solid fa-file-pdf cross-tool-icon"></i>
+                    <span>PDF Tools</span>
+                </a>
+                <a href="https://text.calcfincepro.com" class="cross-tool-card">
+                    <i class="fa-solid fa-file-lines cross-tool-icon"></i>
+                    <span>Text Tools</span>
+                </a>
+                <a href="https://convert.calcfincepro.com" class="cross-tool-card">
+                    <i class="fa-solid fa-right-left cross-tool-icon"></i>
+                    <span>Converter</span>
+                </a>
             </div>
         </section>
 
         <div id="calcAnchor">
-            <!-- 蓝色标题栏 已删除副标题 -->
+            <!-- 蓝色标题栏 -->
             <div class="calc-header">
                 <h2>Calculate Your Investment Growth</h2>
             </div>
@@ -1267,8 +1276,12 @@ document.querySelectorAll('.faq-question').forEach(item => {
 
 // 计算按钮
 calcBtn.addEventListener('click', () => {
-    calculateTotal();
-    updateChart();
+    calcBtn.disabled = true;
+    setTimeout(() => {
+        calculateTotal();
+        updateChart();
+        calcBtn.disabled = false;
+    }, 300);
 });
 compFreq.addEventListener('change', () => {
     calculateTotal();
