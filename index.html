@@ -238,11 +238,6 @@
             gap: 10px;
             margin-bottom: 20px;
         }
-        .quick-btn:last-child {
-            grid-column: 1 / -1;
-            max-width: 260px;
-            margin: 0 auto;
-        }
         .quick-btn {
             padding: 12px 8px;
             border: 1px solid #cbd5e0;
@@ -629,9 +624,6 @@
             .hero-title {
                 font-size: 26px;
             }
-            .quick-buttons {
-                grid-template-columns: 1fr;
-            }
             .result-grid {
                 grid-template-columns: 1fr;
             }
@@ -648,7 +640,8 @@
 <header>
     <div class="container header-inner">
         <a href="index.html" class="logo-group">
-            <i class="fa-solid fa-calculator logo-icon"></i>
+            <!-- 已替换为增长图表图标 -->
+            <i class="fa-solid fa-chart-line logo-icon"></i>
             <div class="logo-text">Smart <span>Finance</span></div>
         </a>
     </div>
@@ -692,6 +685,10 @@
                         </button>
                         <button class="quick-btn" data-preset="college">
                             <i class="fa-solid fa-graduation-cap"></i> Education Fund
+                        </button>
+                        <!-- 新增：应急基金 -->
+                        <button class="quick-btn" data-preset="emergency">
+                            <i class="fa-solid fa-shield-heart"></i> Emergency Fund
                         </button>
                     </div>
                 </div>
@@ -1016,6 +1013,13 @@ document.querySelectorAll('.quick-btn').forEach(btn => {
                 intRate.value = 5.8;
                 invYears.value = 12;
                 monthDeposit.value = 280;
+                break;
+            // 新增应急基金参数
+            case 'emergency':
+                initialInv.value = 2000;
+                intRate.value = 3.0;
+                invYears.value = 5;
+                monthDeposit.value = 150;
                 break;
         }
         calculateTotal();
