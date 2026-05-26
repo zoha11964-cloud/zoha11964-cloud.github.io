@@ -13,20 +13,17 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
 
     <!-- Google Ads -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5761005665703697"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5761005665703697" crossorigin="anonymous"></script>
 
     <!-- Admitad 验证 -->
     <meta name="verify-admitad" content="591433dfd2" />
 
-    <!-- 👇 GA4 代码已经帮你放好啦 -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-70W3ZXHHPY"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-70W3ZXHHPY');
     </script>
 
@@ -66,7 +63,7 @@
             background: #fff;
             padding: 16px 0;
             border-bottom: 1px solid #e2e8f0;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05));
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
         .header-inner {
             display: flex;
@@ -196,7 +193,7 @@
             padding: 10px 12px;
             background: #fff;
             border-radius: 6px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.06));
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
         }
         .hero-feature-item i {
             color: #2563eb;
@@ -228,7 +225,7 @@
             border-radius: 0 0 8px 8px;
             padding: 20px 15px;
             margin: 0 auto 30px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05));
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
         }
         .quick-fill h3 {
             font-size: 15px;
@@ -292,7 +289,7 @@
         input:focus, select:focus {
             outline: none;
             border-color: #2563eb;
-            box-shadow: 0 0 0 2px rgba(37,99,235,0.15));
+            box-shadow: 0 0 0 2px rgba(37,99,235,0.15);
         }
         .calc-main-btn {
             width: 100%;
@@ -417,7 +414,7 @@
             padding: 15px;
             border-radius: 8px;
             border: 1px solid #e2e8f0;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05));
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
         }
         .chart-title {
             text-align: center;
@@ -450,7 +447,7 @@
             background: #fff;
             padding: 15px;
             border-radius: 6px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05));
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
             display: flex;
             align-items: center;
             gap: 12px;
@@ -523,7 +520,7 @@
             background: #fff;
             padding: 15px;
             border-radius: 6px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05));
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
         }
         .tool-header {
             display: flex;
@@ -677,33 +674,7 @@
     </aside>
 
     <main>
-        <section class="hero-section">
-            <div class="hero-badge">
-                <i class="fa-solid fa-star"></i> TOP-RATED FINANCIAL TOOL
-            </div>
-            <h1 class="hero-title">Free Compound Interest Calculator</h1>
-            <p class="hero-sub">Simple Tools for Smarter Investment</p>
-            <p class="hero-desc">Calculate compound interest, track savings and plan your financial future quickly.</p>
-            <div class="hero-features">
-                <div class="hero-feature-item">
-                    <i class="fa-solid fa-calculator"></i>
-                    <span>Accurate Calculations</span>
-                </div>
-                <div class="hero-feature-item">
-                    <i class="fa-solid fa-chart-line"></i>
-                    <span>Financial Planning</span>
-                </div>
-                <div class="hero-feature-item">
-                    <i class="fa-solid fa-arrow-up-right-dots"></i>
-                    <span>Investment Growth</span>
-                </div>
-                <div class="hero-feature-item">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    <span>Secure & Private</span>
-                </div>
-            </div>
-        </section>
-
+        <!-- 计算器模块已上移到首屏 -->
         <div id="calcAnchor">
             <div class="calc-header">
                 <h2>Calculate Your Investment Growth</h2>
@@ -792,6 +763,34 @@
             <h3 class="chart-title">BALANCE GROWTH OVER TIME</h3>
             <canvas id="growthChart"></canvas>
         </div>
+
+        <!-- 原顶部介绍内容已下移到这里 -->
+        <section class="hero-section">
+            <div class="hero-badge">
+                <i class="fa-solid fa-star"></i> TOP-RATED FINANCIAL TOOL
+            </div>
+            <h1 class="hero-title">Free Compound Interest Calculator</h1>
+            <p class="hero-sub">Simple Tools for Smarter Investment</p>
+            <p class="hero-desc">Calculate compound interest, track savings and plan your financial future quickly.</p>
+            <div class="hero-features">
+                <div class="hero-feature-item">
+                    <i class="fa-solid fa-calculator"></i>
+                    <span>Accurate Calculations</span>
+                </div>
+                <div class="hero-feature-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Financial Planning</span>
+                </div>
+                <div class="hero-feature-item">
+                    <i class="fa-solid fa-arrow-up-right-dots"></i>
+                    <span>Investment Growth</span>
+                </div>
+                <div class="hero-feature-item">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Secure & Private</span>
+                </div>
+            </div>
+        </section>
 
         <section class="content-section">
             <h2 class="section-title">Why Use Our Calculator</h2>
