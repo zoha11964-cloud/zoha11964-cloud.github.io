@@ -60,7 +60,7 @@
             display: none;
         }
 
-        /* 1. 顶部品牌栏 极致压缩 */
+        /* 顶部品牌栏 保持现有极限 */
         header {
             background: #fff;
             padding: 2px 0;
@@ -91,7 +91,7 @@
             color: #1a202c;
         }
 
-        /* 2. 导航栏 极致压缩 修复链接 */
+        /* 导航栏 保持现有极限 & 修复链接 */
         .main-nav {
             background: #1a202c;
             padding: 1px 0;
@@ -147,24 +147,27 @@
             }
         }
 
-        /* 3. Smart Tools 上移 + 标题加粗放大 + 卡片再压 */
+        /* Smart Tools 模块 方案三高亮样式 + 极限压缩 */
         .cross-tools-bar {
             background: #fff;
-            padding: 6px 10px;
+            padding: 4px 8px;
             margin: 0 0 4px;
             border-radius: 10px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.05);
         }
         .tools-title {
-            font-size: 13px;
-            color: #475569;
-            margin-bottom: 1px;
+            font-size: 14px;
+            color: #2563eb;
+            background: #f0f7ff;
+            padding: 2px 0;
+            margin-bottom: 0;
             text-align: center;
             font-weight: 700;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 4px;
+            border-radius: 4px;
         }
         .tools-title i {
             color: #2563eb;
@@ -173,14 +176,14 @@
         .cross-tools-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 6px;
+            gap: 4px;
         }
         .cross-tool-card {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 4px;
-            padding: 2px 5px;
+            padding: 1px 4px;
             background: #eff6ff;
             border-radius: 10px;
             text-decoration: none;
@@ -202,7 +205,7 @@
         .tool-placeholder {
             background: #eff6ff;
             border-radius: 10px;
-            padding: 2px 5px;
+            padding: 1px 4px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
         }
 
@@ -262,12 +265,13 @@
             font-size: 14px;
         }
 
-        /* 4. 蓝色标题栏 极致压缩 */
+        /* 蓝色标题栏：删除副标题 + 极限压缩内边距 */
         .calc-header {
             background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
             color: #fff;
-            padding: 2px 4px;
+            padding: 1px 3px;
             margin-bottom: 0;
+            margin-top: 0;
             border-radius: 8px 8px 0 0;
             text-align: center;
         }
@@ -276,10 +280,7 @@
             margin-bottom: 0;
             font-weight: 600;
         }
-        .calc-header p {
-            font-size: 9px;
-            opacity: 0.85;
-        }
+        /* 副标题已整体删除 */
         .calc-card {
             background: #fff;
             border: 1px solid #e2e8f0;
@@ -290,20 +291,22 @@
             box-shadow: 0 3px 10px rgba(0,0,0,0.05);
         }
 
-        /* 5. Quick-Fill 按钮区 极致压缩 */
+        /* Quick-Fill 区域 全间距清零 字号保持不变 */
         .quick-fill h3 {
             font-size: 14px;
             color: #2d3748;
-            margin-bottom: 1px;
+            margin-bottom: 0;
+            margin-top: 0;
         }
         .quick-buttons {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2px;
-            margin-bottom: 10px;
+            gap: 1px;
+            margin-bottom: 0;
+            margin-top: 0;
         }
         .quick-btn {
-            padding: 2px 6px;
+            padding: 1px 5px;
             border: 1px solid #cbd5e0;
             background: #fff;
             border-radius: 6px;
@@ -320,12 +323,12 @@
             color: #2563eb;
         }
 
-        /* 6. 输入区域 极限收紧间距 */
+        /* 输入区域 全局间距极限收紧 */
         .calc-row {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 3px;
+            gap: 5px;
+            margin-bottom: 1px;
         }
         .calc-col {
             flex: 1;
@@ -363,7 +366,7 @@
             font-size: 15px;
             font-weight: 500;
             cursor: pointer;
-            margin: 8px 0;
+            margin: 4px 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -738,7 +741,7 @@
     </aside>
 
     <main>
-        <!-- Smart Tools 优化后模块 -->
+        <!-- Smart Tools 高亮模块 -->
         <section class="cross-tools-bar">
             <div class="tools-title">
                 <i class="fa-solid fa-tools"></i>
@@ -760,9 +763,9 @@
         </section>
 
         <div id="calcAnchor">
+            <!-- 蓝色标题栏 已删除副标题 -->
             <div class="calc-header">
                 <h2>Calculate Your Investment Growth</h2>
-                <p>See how compound interest grows your money over time.</p>
             </div>
             <div class="calc-card">
                 <div class="quick-fill">
@@ -770,8 +773,7 @@
                     <div class="quick-buttons">
                         <button class="quick-btn" data-preset="retirement">
                             <i class="fa-solid fa-building-columns"></i> Retirement
-
-button>
+                        </button>
                         <button class="quick-btn" data-preset="home">
                             <i class="fa-solid fa-house"></i> Home Down Payment
                         </button>
