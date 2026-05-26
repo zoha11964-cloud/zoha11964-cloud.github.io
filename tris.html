@@ -1,10 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Tris Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tris Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        h1 {
+            color: #1a73e8;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #5f6368;
+            font-weight: 500;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dadce0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        input:focus {
+            outline: none;
+            border-color: #1a73e8;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #1557b0;
+        }
+        .result {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #e8f0fe;
+            border-radius: 8px;
+            color: #1a73e8;
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Tris Page</h1>
-    <p>This is a test page.</p>
+    <div class="container">
+        <h1>Tris Calculator</h1>
+        <div class="input-group">
+            <label for="sideA">Side A</label>
+            <input type="number" id="sideA" placeholder="Enter side A length">
+        </div>
+        <div class="input-group">
+            <label for="sideB">Side B</label>
+            <input type="number" id="sideB" placeholder="Enter side B length">
+        </div>
+        <div class="input-group">
+            <label for="sideC">Side C</label>
+            <input type="number" id="sideC" placeholder="Enter side C length">
+        </div>
+        <button onclick="calculateTriangle()">Calculate</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateTriangle() {
+            const a = parseFloat(document.getElementById('sideA').value);
+            const b = parseFloat(document.getElementById('sideB').value);
+            const c = parseFloat(document.getElementById('sideC').value);
+            const resultDiv = document.getElementById('result');
+
+            if (isNaN(a) || isNaN(b) || isNaN(c) || a <= 0 || b <= 0 || c <= 0) {
+                resultDiv.textContent = "Please enter valid positive numbers for all sides.";
+                return;
+            }
+
+            if (a + b <= c || a + c <= b || b + c <= a) {
+                resultDiv.textContent = "These sides cannot form a valid triangle.";
+                return;
+            }
+
+            let type = "";
+            if (a === b && b === c) {
+                type = "Equilateral Triangle";
+            } else if (a === b || a === c || b === c) {
+                type = "Isosceles Triangle";
+            } else {
+                type = "Scalene Triangle";
+            }
+
+            const s = (a + b + c) / 2;
+            const area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+
+            resultDiv.innerHTML = `
+                Type: ${type}<br>
+                Area: ${area.toFixed(2)}
+            `;
+        }
+    </script>
 </body>
 </html>
