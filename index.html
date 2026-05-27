@@ -293,7 +293,7 @@
         .quick-fill h3 {
             font-size: 14px;
             color: #2d3748;
-            margin-bottom: 0;
+            margin-bottom: 8px;
             margin-top: 0;
         }
         .quick-buttons {
@@ -304,7 +304,7 @@
             margin-top: 0;
         }
         .quick-btn {
-            padding: 1px 5px;
+            padding: 8px 5px; /* 这里加高了按钮内边距，让按钮变高，文字更舒服 */
             border: 1px solid #cbd5e0;
             background: #fff;
             border-radius: 6px;
@@ -710,8 +710,9 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
             }
+            /* 保持手机端 2×2 布局 */
             .quick-buttons {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
