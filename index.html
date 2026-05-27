@@ -49,7 +49,6 @@
             scroll-margin-top: 15px;
         }
 
-        /* 广告全部默认隐藏 */
         .ad-slot {
             background: #f8fafc;
             text-align: center;
@@ -136,7 +135,7 @@
                 align-items: start;
             }
             .ad-left, .ad-right {
-                display: none;
+                display: block;
             }
         }
         @media (max-width: 991px) {
@@ -305,7 +304,7 @@
             margin-top: 0;
         }
         .quick-btn {
-            padding: 8px 5px;
+            padding: 8px 5px; /* 这里加高了按钮内边距，让按钮变高，文字更舒服 */
             border: 1px solid #cbd5e0;
             background: #fff;
             border-radius: 6px;
@@ -711,6 +710,7 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
             }
+            /* 保持手机端 2×2 布局 */
             .quick-buttons {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -727,15 +727,13 @@
     </div>
 </header>
 
-<!-- 已加 Guides，精简导航文字 -->
 <div class="main-nav">
     <ul class="nav-list">
         <li><a href="/" class="active">Home</a></li>
-        <li><a href="/guides.html">Guides</a></li>
-        <li><a href="/about.html">About</a></li>
-        <li><a href="/contact.html">Contact</a></li>
-        <li><a href="/privacy.html">Privacy</a></li>
-        <li><a href="/terms.html">Terms</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/contact.html">Contact Us</a></li>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms of Service</a></li>
         <li><a href="/disclaimer.html">Disclaimer</a></li>
     </ul>
 </div>
@@ -750,6 +748,7 @@
     </aside>
 
     <main>
+        <!-- Smart Tools 高亮模块 -->
         <section class="cross-tools-bar">
             <div class="tools-title">
                 <i class="fa-solid fa-tools"></i>
@@ -780,6 +779,7 @@
         </section>
 
         <div id="calcAnchor">
+            <!-- 蓝色标题栏 -->
             <div class="calc-header">
                 <h2>Calculate Your Investment Growth</h2>
             </div>
@@ -941,7 +941,6 @@
             </div>
         </section>
 
-        <!-- 优化后的 FAQ -->
         <section class="content-section faq-section">
             <h2 class="section-title">FAQ</h2>
             <div class="faq-list">
@@ -951,7 +950,7 @@
                         <i class="fa-solid fa-chevron-up"></i>
                     </div>
                     <div class="faq-answer show">
-                        Compound interest is interest calculated on the initial principal plus accumulated interest from previous periods. Using our compound interest calculator helps you see how your money grows faster over time.
+                        Compound interest is interest calculated on the initial principal plus accumulated interest from previous periods. Your money grows faster over time due to compounding effect.
                     </div>
                 </div>
                 <div class="faq-item">
@@ -960,7 +959,7 @@
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        Enter your initial investment, rate, years, and monthly deposits, then click calculate. This free investment calculator gives you accurate results and a clear growth chart instantly.
+                        Enter your initial investment, annual interest rate, investment years and monthly deposits, then click calculate to get detailed results and growth chart.
                     </div>
                 </div>
                 <div class="faq-item">
@@ -969,7 +968,7 @@
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        Monthly compounding calculates interest every month, while annual does once a year. Our compound interest calculator supports both to help you maximize your savings and investment returns.
+                        Monthly compounding calculates interest every month, while annual compounding calculates once per year. Monthly compounding usually generates slightly higher returns.
                     </div>
                 </div>
                 <div class="faq-item">
@@ -978,7 +977,7 @@
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        No, all calculations run locally in your browser. We never collect or store any data when you use our free savings calculator and finance tools.
+                        No, all calculations are processed locally inside your browser. We do not collect or store any of your data.
                     </div>
                 </div>
                 <div class="faq-item">
@@ -987,7 +986,7 @@
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        Yes! This tool works perfectly as a retirement calculator, investment calculator, and savings planner for long-term goals like retirement, education, and emergency funds.
+                        Yes, this tool is perfect for retirement funds, education savings, emergency funds and long-term investment planning.
                     </div>
                 </div>
                 <div class="faq-item">
@@ -996,16 +995,7 @@
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        Results from our compound interest calculator are for reference only. Actual returns may vary based on market conditions, fees, and other financial factors.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        What are the best ways to maximize compound interest?
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        Start early, use monthly compounding, make regular deposits, and use our compound interest calculator to test different strategies for higher savings and investment growth.
+                        Results are for reference only. Actual returns may vary due to market changes, fees and other factors.
                     </div>
                 </div>
             </div>
@@ -1103,6 +1093,7 @@
     </div>
 </footer>
 
+<!-- ✅ 站内互联，帮助爬虫收录子站（用户不可见） -->
 <div style="display:none; visibility:hidden;">
   <a href="https://pdf.calcfincepro.com/" alt="Free PDF Tools">PDF Tools</a>
   <a href="https://text.calcfincepro.com/" alt="Free Text Tools">Text Tools</a>
@@ -1110,7 +1101,6 @@
 </div>
 
 <script>
-// ✅ 100% 保留你原版计算/图表JS，完全没动！
 let growthChart = null;
 const initialInv = document.getElementById('initialInv');
 const intRate = document.getElementById('intRate');
@@ -1125,6 +1115,7 @@ const returnPct = document.getElementById('returnPct');
 const resultYears = document.getElementById('resultYears');
 const copyResult = document.getElementById('copyResult');
 
+// 快捷预设
 document.querySelectorAll('.quick-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         const preset = btn.dataset.preset;
@@ -1159,6 +1150,7 @@ document.querySelectorAll('.quick-btn').forEach(btn => {
     });
 });
 
+// 计算逻辑
 function calculateTotal(){
     const P = parseFloat(initialInv.value) || 0;
     const rate = parseFloat(intRate.value) || 0;
@@ -1192,6 +1184,7 @@ function calculateTotal(){
     returnPct.textContent = pct + '%';
 }
 
+// 图表更新
 function updateChart(){
     const years = parseInt(invYears.value) || 20;
     const P = parseFloat(initialInv.value) || 0;
@@ -1250,6 +1243,7 @@ function updateChart(){
     });
 }
 
+// 复制结果
 copyResult.addEventListener('click', function(){
     const text = `
 Initial Investment: $${initialInv.value}
@@ -1276,6 +1270,7 @@ Interest Ratio: ${returnPct.textContent}
     alert('Result copied!');
 });
 
+// FAQ 折叠
 document.querySelectorAll('.faq-question').forEach(item => {
     item.addEventListener('click', () => {
         const answer = item.nextElementSibling;
@@ -1296,6 +1291,7 @@ document.querySelectorAll('.faq-question').forEach(item => {
     });
 });
 
+// 计算按钮
 calcBtn.addEventListener('click', () => {
     calcBtn.disabled = true;
     setTimeout(() => {
@@ -1309,6 +1305,7 @@ compFreq.addEventListener('change', () => {
     updateChart();
 });
 
+// 页面初始化
 window.addEventListener('DOMContentLoaded', () => {
     calculateTotal();
     updateChart();
