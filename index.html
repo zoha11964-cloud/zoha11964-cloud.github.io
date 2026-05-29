@@ -212,7 +212,7 @@
         .hero-badge {
             color: #2563eb;
             font-size: 14px;
-            font-weight: 60;
+            font-weight: 600;
             margin-bottom: 15px;
             display: flex;
             align-items: center;
@@ -348,7 +348,7 @@
         input:focus, select:focus {
             outline: none;
             border-color: #2563eb;
-            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15));
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
         }
 
         .calc-main-btn {
@@ -855,9 +855,10 @@
                             <div class="result-small-label">TOTAL INTEREST EARNED</div>
                             <div class="result-small-value" id="totalInterest">$0.00</div>
                         </div>
-                        <div class="result-small-label">INTEREST RATIO (%)</div>
+                        <div class="result-small-card">
+                            <div class="result-small-label">INTEREST RATIO (%)</div>
                             <div class="result-small-value blue" id="returnPct">0%</div>
-                    </div>
+                        </div>
                     </div>
 
                     <button class="copy-btn" id="copyResult"><i class="fa-solid fa-copy"></i> Copy Result</button>
@@ -953,7 +954,6 @@
                     <div class="faq-answer">Results are for reference only. Actual returns may vary due to market changes, fees and other factors.</div>
                 </div>
 
-                <!-- ====================== V2.15 新增 5 条 FAQ SEO 专用 ====================== -->
                 <div class="faq-item">
                     <div class="faq-question">What’s the difference between compound interest and simple interest? <i class="fa-solid fa-chevron-down"></i></div>
                     <div class="faq-answer">Simple interest only earns on the original principal. Compound interest earns on principal + accumulated interest, making your money grow much faster over time.</div>
@@ -974,8 +974,6 @@
                     <div class="faq-question">Why is starting early important for compounding? <i class="fa-solid fa-chevron-down"></i></div>
                     <div class="faq-answer">Time is the biggest factor in compounding. Starting 5–10 years earlier can double or triple your final savings without extra monthly effort.</div>
                 </div>
-                <!-- ====================== 新增结束 ====================== -->
-
             </div>
         </section>
 
@@ -1184,7 +1182,16 @@ document.addEventListener('DOMContentLoaded', function() {
             options: {
                 responsive: true,
                 plugins: {
-                    legend: { display: true, position: 'top' }
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
+                            usePointStyle: false,
+                            boxWidth: 20,
+                            boxHeight: 10,
+                            color: '#333'
+                        }
+                    }
                 },
                 scales: {
                     y: {
