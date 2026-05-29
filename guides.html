@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guides | Smart Finance</title>
-    <meta name="description" content="Complete financial guides for emergency fund, retirement fund, education fund and investment returns.">
+    <!-- SEO Meta Optimized V2.20 -->
+    <title>Financial Guides | Emergency Fund, Retirement & Education Planning</title>
+    <meta name="description" content="Complete financial guides: emergency fund, retirement fund, education savings, investment returns & compound interest strategies. Free tools & practical tips.">
+    <meta name="keywords" content="financial guides, emergency fund guide, retirement fund guide, education fund guide, investment returns, compound interest tips">
+    <meta name="author" content="Smart Finance">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://calcfincepro.com/guides.html">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Google tag (gtag.js) -->
@@ -23,6 +27,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
         body {
             font-family: 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
@@ -175,7 +180,8 @@
             transition: all 0.2s ease;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
         }
-        .cross-tool-card:hover {
+        .cross-tool-card:hover,
+        .cross-tool-card.active {
             background: #dbeafe;
             color: #2563eb;
             transform: translateY(-1px);
@@ -188,22 +194,19 @@
 
         .hero-section {
             background: #fff;
-            padding: 20px 15px;
+            padding: 30px 15px;
             text-align: center;
             margin-bottom: 10px;
         }
         .hero-badge {
             color: #2563eb;
-            font-size: 26px;
-            font-weight: 800;
-            margin-bottom: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            /* 让标题在手机上自动换行，同时保持美观 */
-            flex-wrap: wrap;
-            word-break: break-word;
+            gap: 6px;
         }
         .hero-title {
             font-size: 32px;
@@ -223,6 +226,45 @@
             font-size: 15px;
         }
 
+        .guide-nav {
+            background: #fff;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            margin: 0 auto 20px;
+            max-width: 800px;
+        }
+        .guide-nav h3 {
+            font-size: 16px;
+            color: #2563eb;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .guide-nav h3 i {
+            font-size: 14px;
+        }
+        .guide-nav-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+        }
+        .guide-nav-list li a {
+            color: #2d3748;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 4px 10px;
+            background: #eff6ff;
+            border-radius: 4px;
+        }
+        .guide-nav-list li a:hover {
+            background: #2563eb;
+            color: #fff;
+        }
+
         .content-wrap {
             background: #fff;
             padding: 30px;
@@ -231,6 +273,7 @@
             border: 1px solid #e2e8f0;
             max-width: 800px;
             margin: 15px auto;
+            scroll-margin-top: 20px;
         }
         .content-wrap h2 {
             font-size: 24px;
@@ -249,6 +292,13 @@
             color: #4a5568;
             margin-bottom: 20px;
             line-height: 1.8;
+        }
+        .content-wrap a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .content-wrap a:hover {
+            text-decoration: underline;
         }
 
         .info-bar {
@@ -341,20 +391,21 @@
             color: #94a3b8;
         }
 
-        /* 手机端专门优化 */
         @media (max-width: 480px) {
             .hero-title { font-size: 26px; }
-            .hero-badge { 
-                font-size: 20px; 
-                padding: 0 10px; /* 左右加一点内边距，避免文字贴边 */
-            }
             .cross-tools-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
             }
-            /* 正文内容块手机端加左右内边距 */
             .content-wrap {
                 padding: 20px 15px;
+            }
+            .guide-nav-list {
+                gap: 6px;
+            }
+            .guide-nav-list li a {
+                font-size: 13px;
+                padding: 3px 8px;
             }
         }
     </style>
@@ -394,8 +445,7 @@
     <main>
         <section class="cross-tools-bar">
             <div class="tools-title">
-                <i class="fa-solid fa-tools"></i>
-                Smart Tools
+                <i class="fa-solid fa-tools"></i> Smart Tools
             </div>
             <div class="cross-tools-grid">
                 <a href="https://compress.calcfincepro.com" class="cross-tool-card">
@@ -422,37 +472,49 @@
         </section>
 
         <section class="hero-section">
-            <div class="hero-badge"><i class="fa-solid fa-book"></i> COMPLETE FINANCIAL GUIDES</div>
-            <h1 class="hero-title">Financial Guides</h1>
-            <p class="hero-sub">Learn how to plan emergency fund, retirement, education and investment returns</p>
-            <p class="hero-desc">Simple, practical guides to help you reach your financial goals.</p>
+            <div class="hero-badge"><i class="fa-solid fa-star"></i> COMPLETE FINANCIAL GUIDES</div>
+            <h1 class="hero-title">Financial Planning Guides</h1>
+            <p class="hero-sub">Practical step-by-step guides for emergency fund, retirement, education & investment growth</p>
+            <p class="hero-desc">Simple, actionable advice to build long-term wealth with compound interest & smart saving strategies.</p>
         </section>
+
+        <!-- 内部分页导航 SEO 增强 -->
+        <div class="guide-nav">
+            <h3><i class="fa-solid fa-list-ul"></i> Quick Jump</h3>
+            <ul class="guide-nav-list">
+                <li><a href="#emergency-fund">Emergency Fund</a></li>
+                <li><a href="#retirement-fund">Retirement Fund</a></li>
+                <li><a href="#education-fund">Education Fund</a></li>
+                <li><a href="#improve-low-return">Improve Returns</a></li>
+                <li><a href="#sustain-high-return">Stable High Returns</a></li>
+            </ul>
+        </div>
 
         <div id="emergency-fund" class="content-wrap">
             <h2><i class="fa-solid fa-heart-pulse"></i> Emergency Fund Guide</h2>
             <p>Building a reliable emergency fund is the foundational step for anyone who wants to achieve long-term financial security. In daily life, unexpected expenses can appear at any time, including sudden medical costs, vehicle maintenance bills, home repair fees or temporary loss of income. Without proper savings in place, these unexpected events can easily push you into high-interest debt, which will put extra pressure on your daily budget and destroy your long-term financial plans. This is why every financial expert strongly recommends setting up a dedicated emergency fund as your first financial goal.</p>
-            <p>To build a qualified emergency fund, you first need to calculate your total monthly essential expenses, including rent, food, utilities and basic living costs. The standard rule is to save enough money to cover three to six months of these necessary expenses. If you have an unstable income or work in a high-risk industry, it is wiser to extend the target to six to twelve months of living costs. Using our professional emergency fund calculator, you can input your monthly expenses, target savings amount and planned monthly contribution, so you can clearly know how long it will take you to complete your goal.</p>
+            <p>To build a qualified emergency fund, you first need to calculate your total monthly essential expenses, including rent, food, utilities and basic living costs. The standard rule is to save enough money to cover three to six months of these necessary expenses. If you have an unstable income or work in a high-risk industry, it is wiser to extend the target to six to twelve months of living costs. Using our <a href="/#calcAnchor">emergency fund calculator</a>, you can input your monthly expenses, target savings amount and planned monthly contribution, so you can clearly know how long it will take you to complete your goal.</p>
             <p>When managing your emergency fund, liquidity and safety are the two core principles. You should store this money in high-liquidity savings accounts instead of long-term locked investment products. This ensures you can withdraw cash immediately once an emergency happens. Meanwhile, do not use this fund for daily consumption, entertainment or non-urgent shopping. You can set up automatic monthly transfers to continuously accumulate savings without manual operation. Regularly review your emergency fund plan every six months, and adjust your savings amount according to income changes, family size and living cost fluctuations. A solid emergency fund will bring you stable mental peace and strong financial protection throughout your life.</p>
         </div>
 
         <div id="retirement-fund" class="content-wrap">
             <h2><i class="fa-solid fa-building-columns"></i> Retirement Fund Guide</h2>
             <p>Retirement planning is a long-term financial project that needs decades of persistence. Many people ignore early retirement savings because they feel retirement is far away, but they overlook the powerful effect of compound interest. The earlier you start saving for retirement, the more time your assets have to grow, and the less pressure you will face when you get older. A scientific retirement fund plan can help you maintain your current living standard after you retire, and avoid relying on others or cutting down living quality in your later years.</p>
-            <p>The first step of retirement planning is to define your expected retirement age and ideal monthly pension income. Combine your current age, annual income and existing savings to work out a reasonable savings target. Our retirement calculator can simulate different contribution amounts and annual return rates, showing you the final fund scale you can accumulate when you retire. Even if you can only put aside a small sum every month at the beginning, long-term continuous investment will create amazing results under the effect of compound growth.</p>
+            <p>The first step of retirement planning is to define your expected retirement age and ideal monthly pension income. Combine your current age, annual income and existing savings to work out a reasonable savings target. Our <a href="/#calcAnchor">retirement calculator</a> can simulate different contribution amounts and annual return rates, showing you the final fund scale you can accumulate when you retire. Even if you can only put aside a small sum every month at the beginning, long-term continuous investment will create amazing results under the effect of compound growth.</p>
             <p>In terms of asset allocation for retirement funds, you need to match your age and risk tolerance. Young people can properly choose moderate-risk investment products to pursue higher long-term returns. As you gradually approach retirement age, you should shift assets to low-risk and stable products to lock in existing profits and avoid market fluctuations causing huge losses. Stick to fixed monthly savings habits, avoid withdrawing retirement funds in advance for short-term consumption, and review and optimize your portfolio every one to two years. A complete retirement fund plan is the best guarantee for your comfortable later life.</p>
         </div>
 
         <div id="education-fund" class="content-wrap">
             <h2><i class="fa-solid fa-graduation-cap"></i> Education Fund Guide</h2>
             <p>Education is one of the most valuable investments for individuals and families, and education costs have been rising steadily year by year. Whether you are preparing for your children’s college study, overseas education, or your own further study and skill improvement, sufficient education savings can greatly reduce short-term financial pressure. Making a long-term education fund plan in advance can let you arrange funds reasonably, and avoid being caught off guard when large education expenses arrive.</p>
-            <p>The core advantage of early education savings is making full use of compound interest. The longer the savings cycle, the lower the monthly savings pressure. Before making a plan, you need to clarify the expected education stage, approximate tuition fees, living expenses and study cycle. Our professional education savings calculator can help you calculate the required total fund, reasonable monthly savings amount and expected growth effect under different return rates. You can adjust your savings plan flexibly according to your current economic situation.</p>
+            <p>The core advantage of early education savings is making full use of compound interest. The longer the savings cycle, the lower the monthly savings pressure. Before making a plan, you need to clarify the expected education stage, approximate tuition fees, living expenses and study cycle. Our professional <a href="/#calcAnchor">education savings calculator</a> can help you calculate the required total fund, reasonable monthly savings amount and expected growth effect under different return rates. You can adjust your savings plan flexibly according to your current economic situation.</p>
             <p>When selecting storage channels for education funds, we suggest giving priority to low-risk, stable and liquid financial products. Try to stay away from high-risk speculative investments, so as to prevent market risks from affecting your education reserve funds. Form the habit of regular fixed savings, and you can also appropriately increase the monthly savings amount when your income rises. Track the growth of your education fund regularly, and update your plan in time according to the change of tuition standard and study plan. A well-prepared education fund will let you and your family face future learning opportunities with more confidence.</p>
         </div>
 
         <div id="improve-low-return" class="content-wrap">
             <h2><i class="fa-solid fa-arrow-up-right-dots"></i> How To Improve Low Investment Returns</h2>
             <p>Many investors find that their long-term investment returns are far lower than market average, which makes their savings grow slowly and fail to beat the growth of living costs. Low investment returns usually come from unreasonable asset allocation, excessive investment fees, overly conservative choices or irregular investment habits. It does not mean you need to take high risks to chase high profits. Through scientific adjustment and optimized strategies, you can effectively improve investment returns under controllable risks.</p>
-            <p>First of all, recheck your asset portfolio. If all your funds are placed in ultra-low-risk products, the overall return will naturally stay at a low level. You can properly diversify assets and match low-risk, medium-risk products according to your risk tolerance and investment cycle. Secondly, pay attention to various hidden fees of investment products. Cumulative service fees, management fees and transaction fees will continuously erode your actual profits. Choosing low-fee products can directly increase your net return. You can use our compound interest calculator to compare the final income under different return rates, so you can intuitively see the gap brought by return differences.</p>
+            <p>First of all, recheck your asset portfolio. If all your funds are placed in ultra-low-risk products, the overall return will naturally stay at a low level. You can properly diversify assets and match low-risk, medium-risk products according to your risk tolerance and investment cycle. Secondly, pay attention to various hidden fees of investment products. Cumulative service fees, management fees and transaction fees will continuously erode your actual profits. Choosing low-fee products can directly increase your net return. You can use our <a href="/#calcAnchor">compound interest calculator</a> to compare the final income under different return rates, so you can intuitively see the gap brought by return differences.</p>
             <p>In addition, maintain a long-term investment perspective. Frequent buying and selling will not only increase transaction costs, but also easily miss the growth cycle of assets. Set a clear long-term investment goal, avoid being influenced by short-term market ups and downs, and stick to your established strategy. Learn basic financial knowledge continuously, understand the operation logic of different products, and do not follow blind investment trends. Small improvements in return rate will produce huge differences in final assets after years of compound growth, which is the key to improving the efficiency of your wealth accumulation.</p>
         </div>
 
@@ -460,13 +522,13 @@
             <h2><i class="fa-solid fa-shield-halved"></i> How To Maintain High Investment Returns</h2>
             <p>Obtaining high investment returns is not easy, and maintaining stable high returns for a long time is even more challenging. Many investors can get good profits in a certain stage, but later suffer losses due to emotional operation, strategy deviation or blind expansion of risks. Maintaining high investment returns requires strict self-discipline, mature investment mentality and a complete risk control system. Only by combining profit pursuit with risk prevention can we keep wealth growing steadily for a long time.</p>
             <p>First, stick to your original investment strategy. After achieving ideal returns, many people will become greedy and try to increase positions or switch to higher-risk products in order to earn more, which will greatly amplify risks. You need to stick to the asset allocation and investment cycle that have brought you profits. Secondly, do a good job in portfolio rebalancing. With the change of market conditions, the proportion of various assets in the portfolio will change regularly. Regular rebalancing can lock in existing profits and control overall risks within a safe range.</p>
-            <p>Control your investment mentality firmly, do not panic sell when the market falls, and do not blindly chase up when the market rises. Keep away from so-called "excessively high return" speculative projects, because high returns must be accompanied by high hidden risks. Use our investment growth calculator to track the long-term growth trend of your assets, and evaluate the stability of returns regularly. Reasonably arrange monthly fixed investment, maintain stable capital input, and let compound interest continue to create value for you. Long-term stable high returns are the core goal of professional investment and the solid power of wealth appreciation.</p>
+            <p>Control your investment mentality firmly, do not panic sell when the market falls, and do not blindly chase up when the market rises. Keep away from so-called "excessively high return" speculative projects, because high returns must be accompanied by high hidden risks. Use our <a href="/#calcAnchor">investment growth calculator</a> to track the long-term growth trend of your assets, and evaluate the stability of returns regularly. Reasonably arrange monthly fixed investment, maintain stable capital input, and let compound interest continue to create value for you. Long-term stable high returns are the core goal of professional investment and the solid power of wealth appreciation.</p>
         </div>
 
         <div class="info-bar">
-            Use our free <a href="/#calcAnchor">compound interest calculator</a> to start your financial plan.
+            Use our free <a href="/#calcAnchor">compound interest calculator</a> to start your financial plan today.
             <br>
-            Read our <a href="/disclaimer.html">disclaimer</a> and <a href="/contact.html">contact us</a> if you need help.
+            Calculate emergency fund, retirement, education savings & investment growth in seconds.
             <br>
             <a href="/#calcAnchor" class="main-btn">Go to Calculator</a>
         </div>
@@ -485,16 +547,16 @@
 <footer>
     <div class="footer-container">
         <div class="footer-seo-tags">
-            <span>compound interest calculator</span>
-            <span>investment calculator</span>
+            <span>financial guides</span>
+            <span>emergency fund guide</span>
+            <span>retirement fund guide</span>
+            <span>education fund guide</span>
+            <span>investment returns</span>
+            <span>compound interest tips</span>
             <span>savings calculator</span>
             <span>retirement calculator</span>
-            <span>emergency fund guide</span>
-            <span>retirement planning guide</span>
-            <span>education savings plan</span>
-            <span>financial planning tips</span>
-            <span>investment growth guide</span>
-            <span>compound interest tips</span>
+            <span>financial planning</span>
+            <span>wealth building</span>
         </div>
         <div class="footer-links">
             <div class="footer-col">
