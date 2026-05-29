@@ -61,7 +61,6 @@
             display: none;
         }
 
-        /* 顶部品牌栏 */
         header {
             background: #fff;
             padding: 2px 0;
@@ -92,7 +91,6 @@
             color: #1a202c;
         }
 
-        /* 导航栏 */
         .main-nav {
             background: #1a202c;
             padding: 1px 0;
@@ -148,7 +146,6 @@
             }
         }
 
-        /* Smart Tools 模块 */
         .cross-tools-bar {
             background: #fff;
             border-radius: 10px;
@@ -262,7 +259,6 @@
             font-size: 14px;
         }
 
-        /* 蓝色标题栏 */
         .calc-header {
             background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
             color: #fff;
@@ -287,7 +283,6 @@
             box-shadow: 0 3px 10px rgba(0,0,0,0.05);
         }
 
-        /* Quick-Fill 区域 */
         .quick-fill {
             margin-top: 0;
         }
@@ -307,19 +302,17 @@
         .quick-btn {
             position: relative;
             z-index: 999;
-            padding: 8px 5px;
+            padding: 8px 4px;
             border: 1px solid #cbd5e0;
             background: #fff;
             border-radius: 6px;
-            font-size: 13px;
+            font-size: 12px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 4px;
             white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
         .quick-btn:hover {
             background: #eff6ff;
@@ -327,7 +320,6 @@
             color: #2563eb;
         }
 
-        /* 输入区域 */
         .calc-row {
             display: flex;
             flex-wrap: wrap;
@@ -359,7 +351,6 @@
             box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
         }
 
-        /* 主计算按钮 */
         .calc-main-btn {
             width: 100%;
             padding: 8px;
@@ -501,7 +492,6 @@
             height: 220px !important;
         }
 
-        /* 动态链接样式 */
         .dynamic-hook {
             text-align: center;
             margin: 15px auto;
@@ -562,7 +552,6 @@
             color: #718096;
         }
 
-        /* FAQ 样式 */
         .faq-section {
             max-width: 700px;
             margin: 0 auto;
@@ -715,7 +704,6 @@
             color: #94a3b8;
         }
 
-        /* MOBILE FIX —— 只修复手机端，不影响电脑 */
         @media (max-width: 480px) {
             .hero-title { font-size: 26px; }
             .result-grid { grid-template-columns: 1fr; }
@@ -728,8 +716,8 @@
             }
             .quick-btn {
                 min-height: 44px !important;
-                padding: 10px 6px !important;
-                font-size: 12px !important;
+                padding: 10px 4px !important;
+                font-size: 11px !important;
                 pointer-events: auto !important;
             }
             .calc-main-btn {
@@ -740,6 +728,7 @@
     </style>
 </head>
 <body>
+
 <header>
     <div class="container header-inner">
         <a href="/" class="logo-group">
@@ -753,8 +742,8 @@
     <ul class="nav-list">
         <li><a href="/" class="active">Home</a></li>
         <li><a href="/guides.html">Guides</a></li>
-        <li><a href="/about.html">About Us</a></li>
-        <li><a href="/contact.html">Contact Us</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
         <li><a href="/privacy.html">Privacy Policy</a></li>
         <li><a href="/terms.html">Terms of Service</a></li>
         <li><a href="/disclaimer.html">Disclaimer</a></li>
@@ -771,32 +760,25 @@
     </aside>
 
     <main>
-        <!-- Smart Tools 高亮模块 -->
         <section class="cross-tools-bar">
             <div class="tools-title">
-                <i class="fa-solid fa-tools"></i>
-                Smart Tools
+                <i class="fa-solid fa-tools"></i> Smart Tools
             </div>
             <div class="cross-tools-grid">
                 <a href="https://compress.calcfincepro.com" class="cross-tool-card">
-                    <i class="fa-solid fa-image cross-tool-icon"></i>
-                    <span>Image Compressor</span>
+                    <i class="fa-solid fa-image cross-tool-icon"></i><span>Image Compressor</span>
                 </a>
                 <a href="https://aitools.calcfincepro.com" class="cross-tool-card">
-                    <i class="fa-solid fa-wand-magic-sparkles cross-tool-icon"></i>
-                    <span>AI Tools</span>
+                    <i class="fa-solid fa-wand-magic-sparkles cross-tool-icon"></i><span>AI Tools</span>
                 </a>
                 <a href="https://pdf.calcfincepro.com" class="cross-tool-card">
-                    <i class="fa-solid fa-file-pdf cross-tool-icon"></i>
-                    <span>PDF Tools</span>
+                    <i class="fa-solid fa-file-pdf cross-tool-icon"></i><span>PDF Tools</span>
                 </a>
                 <a href="https://text.calcfincepro.com" class="cross-tool-card">
-                    <i class="fa-solid fa-file-lines cross-tool-icon"></i>
-                    <span>Text Tools</span>
+                    <i class="fa-solid fa-file-lines cross-tool-icon"></i><span>Text Tools</span>
                 </a>
                 <a href="https://convert.calcfincepro.com" class="cross-tool-card">
-                    <i class="fa-solid fa-right-left cross-tool-icon"></i>
-                    <span>Converter</span>
+                    <i class="fa-solid fa-right-left cross-tool-icon"></i><span>Converter</span>
                 </a>
             </div>
         </section>
@@ -809,40 +791,32 @@
                 <div class="quick-fill">
                     <h3>QUICK-FILL SCENARIOS</h3>
                     <div class="quick-buttons">
-                        <button class="quick-btn" data-preset="retirement">
-                            <i class="fa-solid fa-building-columns"></i> Retirement
-                        </button>
-                        <button class="quick-btn" data-preset="home">
-                            <i class="fa-solid fa-house"></i> Home Down Payment
-                        </button>
-                        <button class="quick-btn" data-preset="college">
-                            <i class="fa-solid fa-graduation-cap"></i> Education Fund
-                        </button>
-                        <button class="quick-btn" data-preset="emergency">
-                            <i class="fa-solid fa-heart-pulse"></i> Emergency Fund
-                        </button>
+                        <button class="quick-btn" data-preset="retirement"><i class="fa-solid fa-building-columns"></i> Retirement</button>
+                        <button class="quick-btn" data-preset="home"><i class="fa-solid fa-house"></i> Home Down Payment</button>
+                        <button class="quick-btn" data-preset="college"><i class="fa-solid fa-graduation-cap"></i> Education Fund</button>
+                        <button class="quick-btn" data-preset="emergency"><i class="fa-solid fa-heart-pulse"></i> Emergency Fund</button>
                     </div>
                 </div>
 
                 <div class="calc-row">
                     <div class="calc-col">
                         <label>INITIAL INVESTMENT (USD)</label>
-                        <input type="number" min="0" step="0.01" id="initialInv" value="10000" placeholder="e.g. 10,000">
+                        <input type="number" min="0" step="0.01" id="initialInv" value="10000">
                     </div>
                     <div class="calc-col">
                         <label>ANNUAL INTEREST RATE (%)</label>
-                        <input type="number" min="0" max="100" step="0.01" id="intRate" value="8" placeholder="e.g. 8">
+                        <input type="number" min="0" max="100" step="0.01" id="intRate" value="8">
                     </div>
                 </div>
 
                 <div class="calc-row">
                     <div class="calc-col">
                         <label>INVESTMENT PERIOD (YEARS)</label>
-                        <input type="number" min="0" max="100" id="invYears" value="20" placeholder="e.g. 20">
+                        <input type="number" min="0" max="100" id="invYears" value="20">
                     </div>
                     <div class="calc-col">
                         <label>MONTHLY DEPOSITS (USD)</label>
-                        <input type="number" min="0" step="0.01" id="monthDeposit" value="200" placeholder="e.g. 200">
+                        <input type="number" min="0" step="0.01" id="monthDeposit" value="200">
                     </div>
                 </div>
 
@@ -869,9 +843,7 @@
                             <div class="future-value-label">FINAL VALUE</div>
                             <div class="future-value" id="futureVal">$0.00</div>
                         </div>
-                        <div class="future-value-icon">
-                            <i class="fa-solid fa-arrow-trend-up"></i>
-                        </div>
+                        <div class="future-value-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
                     </div>
 
                     <div class="result-grid">
@@ -883,21 +855,20 @@
                             <div class="result-small-label">TOTAL INTEREST EARNED</div>
                             <div class="result-small-value" id="totalInterest">$0.00</div>
                         </div>
-                        <div class="result-small-card">
-                            <div class="result-small-label">INTEREST RATIO (%)</div>
+                        <div class="result-small-label">INTEREST RATIO (%)</div>
                             <div class="result-small-value blue" id="returnPct">0%</div>
-                        </div>
+                    </div>
                     </div>
 
-                    <button class="copy-btn" id="copyResult">
-                        <i class="fa-solid fa-copy"></i> Copy Result
-                    </button>
+                    <button class="copy-btn" id="copyResult"><i class="fa-solid fa-copy"></i> Copy Result</button>
 
-                    <!-- 动态链接挪到 Copy Result 按钮下方 -->
                     <div class="dynamic-hook">
                         <a id="topHookLink" href="/guides.html#retirement">
                             <i class="fa-solid fa-lightbulb"></i> Practical advice for Investment growth
                         </a>
+                    </div>
+                    <div class="dynamic-hook">
+                        <a href="/about.html"><i class="fa-solid fa-info-circle"></i> Want to learn our story? Explore About page</a>
                     </div>
 
                     <div class="result-note">* Results calculated using standard compound interest formula.</div>
@@ -907,40 +878,28 @@
 
         <div class="chart-wrap">
             <h3 class="chart-title">Investment Balance Growth Chart</h3>
-            <canvas id="growthChart" alt="Investment growth chart showing balance over years"></canvas>
+            <canvas id="growthChart"></canvas>
         </div>
 
-        <!-- 下方动态链接 -->
         <div class="dynamic-hook">
             <a id="bottomHookLink" href="/guides.html#retirement">
                 <i class="fa-solid fa-book-open"></i> Learn proven strategies to grow your savings faster
             </a>
         </div>
+        <div class="dynamic-hook">
+            <a href="/contact.html"><i class="fa-solid fa-envelope"></i> Got questions or feedback? Reach out via Contact</a>
+        </div>
 
         <section class="hero-section">
-            <div class="hero-badge">
-                <i class="fa-solid fa-star"></i> TOP-RATED TOOLS
-            </div>
+            <div class="hero-badge"><i class="fa-solid fa-star"></i> TOP-RATED TOOLS</div>
             <h1 class="hero-title">Free Compound Interest Calculator</h1>
             <p class="hero-sub">Online Finance Calculator for Investment & Savings</p>
             <p class="hero-desc">Calculate compound interest, investment growth, and long-term savings with our free, easy-to-use finance calculator. Visual chart + fast results.</p>
             <div class="hero-features">
-                <div class="hero-feature-item">
-                    <i class="fa-solid fa-calculator"></i>
-                    <span>Accurate Financial Calculations</span>
-                </div>
-                <div class="hero-feature-item">
-                    <i class="fa-solid fa-chart-line"></i>
-                    <span>Visual Growth Chart</span>
-                </div>
-                <div class="hero-feature-item">
-                    <i class="fa-solid fa-arrow-trend-up"></i>
-                    <span>Investment & Retirement Planning</span>
-                </div>
-                <div class="hero-feature-item">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    <span>100% Free & Secure</span>
-                </div>
+                <div class="hero-feature-item"><i class="fa-solid fa-calculator"></i><span>Accurate Financial Calculations</span></div>
+                <div class="hero-feature-item"><i class="fa-solid fa-chart-line"></i><span>Visual Growth Chart</span></div>
+                <div class="hero-feature-item"><i class="fa-solid fa-arrow-trend-up"></i><span>Investment & Retirement Planning</span></div>
+                <div class="hero-feature-item"><i class="fa-solid fa-shield-halved"></i><span>100% Free & Secure</span></div>
             </div>
         </section>
 
@@ -949,138 +908,49 @@
             <div class="feature-grid">
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
-                    <div class="feature-text">
-                        <h3>Plan Your Future</h3>
-                        <p>Project long-term wealth growth and set clear financial goals.</p>
-                    </div>
+                    <div class="feature-text"><h3>Plan Your Future</h3><p>Project long-term wealth growth and set clear financial goals.</p></div>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fa-solid fa-balance-scale"></i></div>
-                    <div class="feature-text">
-                        <h3>Smarter Decisions</h3>
-                        <p>Compare different investment plans and choose the best option.</p>
-                    </div>
+                    <div class="feature-text"><h3>Smarter Decisions</h3><p>Compare different investment plans and choose the best option.</p></div>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
-                    <div class="feature-text">
-                        <h3>Boost Earnings</h3>
-                        <p>Maximize returns with the power of compound interest.</p>
-                    </div>
+                    <div class="feature-text"><h3>Boost Earnings</h3><p>Maximize returns with the power of compound interest.</p></div>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <div class="feature-text">
-                        <h3>Free & Secure</h3>
-                        <p>No registration, all calculations run locally in your browser.</p>
-                    </div>
+                    <div class="feature-text"><h3>Free & Secure</h3><p>No registration, all calculations run locally in your browser.</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- FAQ 区域 -->
         <section class="content-section faq-section">
             <h2 class="section-title">FAQ</h2>
             <div class="faq-list">
                 <div class="faq-item">
-                    <div class="faq-question active">
-                        What is compound interest and how does it work?
-                        <i class="fa-solid fa-chevron-up"></i>
-                    </div>
-                    <div class="faq-answer show">
-                        Compound interest is interest calculated on the initial principal plus accumulated interest from previous periods. Your money grows faster over time due to compounding effect.
-                    </div>
+                    <div class="faq-question active">What is compound interest and how does it work? <i class="fa-solid fa-chevron-up"></i></div>
+                    <div class="faq-answer show">Compound interest is interest calculated on the initial principal plus accumulated interest from previous periods. Your money grows faster over time due to compounding effect.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">
-                        How do I use this compound interest calculator?
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        Enter your initial investment, annual interest rate, investment years and monthly deposits, then click calculate to get detailed results and growth chart.
-                    </div>
+                    <div class="faq-question">How do I use this compound interest calculator? <i class="fa-solid fa-chevron-down"></i></div>
+                    <div class="faq-answer">Enter your initial investment, annual interest rate, investment years and monthly deposits, then click calculate to get detailed results and growth chart.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">
-                        What is the difference between annual and monthly compounding?
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        Monthly compounding calculates interest every month, while annual compounding calculates once per year. Monthly compounding usually generates slightly higher returns.
-                    </div>
+                    <div class="faq-question">What is the difference between annual and monthly compounding? <i class="fa-solid fa-chevron-down"></i></div>
+                    <div class="faq-answer">Monthly compounding calculates interest every month, while annual compounding calculates once per year. Monthly compounding usually generates slightly higher returns.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">
-                        Do you store my personal data?
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        No, all calculations are processed locally inside your browser. We do not collect or store any of your data.
-                    </div>
+                    <div class="faq-question">Do you store my personal data? <i class="fa-solid fa-chevron-down"></i></div>
+                    <div class="faq-answer">No, all calculations are processed locally inside your browser. We do not collect or store any of your data.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">
-                        Can I use this calculator for retirement planning?
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        Yes, this tool is perfect for retirement funds, education savings, emergency funds and long-term investment planning.
-                    </div>
+                    <div class="faq-question">Can I use this calculator for retirement planning? <i class="fa-solid fa-chevron-down"></i></div>
+                    <div class="faq-answer">Yes, this tool is perfect for retirement funds, education savings, emergency funds and long-term investment planning.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">
-                        Are the results guaranteed?
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        Results are for reference only. Actual returns may vary due to market changes, fees and other factors.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Why is compound interest important for long term savings?
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        Compound interest lets you earn interest on both your principal and accumulated interest, greatly accelerating wealth growth for long-term savings and investments.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Is this a free investment calculator for everyday use?
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        Yes, this investment calculator is completely free to use with no hidden charges, limits or membership requirements for all users.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        How can I maximize returns with compound interest?
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        Start investing early, make regular monthly contributions and choose accounts with more frequent compounding to get the best possible returns.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Can I calculate savings without monthly deposits?
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        Definitely. Simply set the monthly deposits field to zero to calculate growth from a one-time initial investment only.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        What makes a good savings calculator?
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        A reliable savings calculator offers accurate formulas, visual growth charts, support for different compounding rules and a simple, easy-to-use interface.
-                    </div>
+                    <div class="faq-question">Are the results guaranteed? <i class="fa-solid fa-chevron-down"></i></div>
+                    <div class="faq-answer">Results are for reference only. Actual returns may vary due to market changes, fees and other factors.</div>
                 </div>
             </div>
         </section>
@@ -1089,34 +959,22 @@
             <h2 class="section-title">Related Tools</h2>
             <div class="related-tools">
                 <div class="tool-card">
-                    <div class="tool-header">
-                        <i class="fa-solid fa-arrow-trend-up"></i>
-                        <h3>Retirement Calculator</h3>
-                    </div>
+                    <div class="tool-header"><i class="fa-solid fa-arrow-trend-up"></i><h3>Retirement Calculator</h3></div>
                     <p>Estimate savings for a comfortable retirement.</p>
                     <a href="#calcAnchor">Try Free →</a>
                 </div>
                 <div class="tool-card">
-                    <div class="tool-header">
-                        <i class="fa-solid fa-house"></i>
-                        <h3>Mortgage Calculator</h3>
-                    </div>
+                    <div class="tool-header"><i class="fa-solid fa-house"></i><h3>Mortgage Calculator</h3></div>
                     <p>Calculate monthly payments for home loans.</p>
                     <a href="#calcAnchor">Try Free →</a>
                 </div>
                 <div class="tool-card">
-                    <div class="tool-header">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                        <h3>Education Planner</h3>
-                    </div>
+                    <div class="tool-header"><i class="fa-solid fa-graduation-cap"></i><h3>Education Planner</h3></div>
                     <p>Plan savings for education costs.</p>
                     <a href="#calcAnchor">Try Free →</a>
                 </div>
                 <div class="tool-card">
-                    <div class="tool-header">
-                        <i class="fa-solid fa-wallet"></i>
-                        <h3>Budget Tracker</h3>
-                    </div>
+                    <div class="tool-header"><i class="fa-solid fa-wallet"></i><h3>Budget Tracker</h3></div>
                     <p>Track daily income and expenses easily.</p>
                     <a href="#calcAnchor">Try Free →</a>
                 </div>
@@ -1141,17 +999,9 @@
 <footer>
     <div class="footer-container">
         <div class="footer-seo-tags">
-            <span>online tools</span>
-            <span>free tools</span>
-            <span>finance calculator</span>
-            <span>compound interest calculator</span>
-            <span>investment calculator</span>
-            <span>savings calculator</span>
-            <span>loan calculator</span>
-            <span>retirement calculator</span>
-            <span>AI tools</span>
-            <span>PDF tools</span>
-            <span>image compressor</span>
+            <span>online tools</span><span>free tools</span><span>finance calculator</span><span>compound interest calculator</span>
+            <span>investment calculator</span><span>savings calculator</span><span>loan calculator</span><span>retirement calculator</span>
+            <span>AI tools</span><span>PDF tools</span><span>image compressor</span>
         </div>
         <div class="footer-links">
             <div class="footer-col">
@@ -1172,16 +1022,13 @@
             </div>
         </div>
     </div>
-    <div class="footer-copyright">
-        © 2026 Smart Finance. All Rights Reserved.
-    </div>
+    <div class="footer-copyright">© 2026 Smart Finance. All Rights Reserved.</div>
 </footer>
 
-<!-- 站内互联 -->
-<div style="display:none; visibility:hidden;">
-  <a href="https://pdf.calcfincepro.com/" alt="Free PDF Tools">PDF Tools</a>
-  <a href="https://text.calcfincepro.com/" alt="Free Text Tools">Text Tools</a>
-  <a href="https://convert.calcfincepro.com/" alt="Free Converter Tools">Convert Tools</a>
+<div style="display:none;">
+  <a href="https://pdf.calcfincepro.com/">PDF Tools</a>
+  <a href="https://text.calcfincepro.com/">Text Tools</a>
+  <a href="https://convert.calcfincepro.com/">Convert Tools</a>
 </div>
 
 <script>
@@ -1204,67 +1051,43 @@ document.addEventListener('DOMContentLoaded', function() {
     const bottomHookLink = document.getElementById('bottomHookLink');
 
     const presetConfig = {
-        retirement: {
-            initial: 50000, rate: 7.0, years: 30, monthly: 800,
-            topText: "<i class='fa-solid fa-lightbulb'></i> Handy tips for your Retirement plan",
-            bottomText: "<i class='fa-solid fa-book-open'></i> Discover smart ways to build your retirement savings",
-            link: "/guides.html#retirement-fund"
-        },
-        home: {
-            initial: 15000, rate: 4.5, years: 5, monthly: 1000,
-            topText: "<i class='fa-solid fa-lightbulb'></i> Practical advice for Investment growth",
-            bottomText: "<i class='fa-solid fa-book-open'></i> Find reliable ways to save for your home down payment",
-            link: "/guides.html#home-down-payment"
-        },
-        college: {
-            initial: 10000, rate: 6.0, years: 15, monthly: 300,
-            topText: "<i class='fa-solid fa-lightbulb'></i> Smart ideas for Education savings",
-            bottomText: "<i class='fa-solid fa-book-open'></i> Use proven tactics to fund future education costs",
-            link: "/guides.html#education-fund"
-        },
-        emergency: {
-            initial: 5000, rate: 2.5, years: 3, monthly: 500,
-            topText: "<i class='fa-solid fa-lightbulb'></i> Learn useful tips for Emergency Fund",
-            bottomText: "<i class='fa-solid fa-book-open'></i> See how to build a solid emergency fund easily",
-            link: "/guides.html#emergency-fund"
-        }
+        retirement: { initial:50000, rate:7.0, years:30, monthly:800, topText:"Handy tips for your Retirement plan", bottomText:"Discover smart ways to build your retirement savings", link:"/guides.html#retirement-fund" },
+        home: { initial:15000, rate:4.5, years:5, monthly:1000, topText:"Practical advice for Investment growth", bottomText:"Find reliable ways to save for your home down payment", link:"/guides.html#home-down-payment" },
+        college: { initial:10000, rate:6.0, years:15, monthly:300, topText:"Smart ideas for Education savings", bottomText:"Use proven tactics to fund future education costs", link:"/guides.html#education-fund" },
+        emergency: { initial:5000, rate:2.5, years:3, monthly:500, topText:"Learn useful tips for Emergency Fund", bottomText:"See how to build a solid emergency fund easily", link:"/guides.html#emergency-fund" }
     };
 
     function formatCurrency(num) {
-        return new Intl.NumberFormat('en-US', {
-            style: 'currency', currency: 'USD', minimumFractionDigits: 2
-        }).format(num || 0);
+        return new Intl.NumberFormat('en-US', { style:'currency', currency:'USD', minimumFractionDigits:2 }).format(num||0);
     }
 
     function calculateTotal() {
-        const P = Number(initialInv.value) || 0;
-        const rate = Number(intRate.value) || 0;
-        const years = Number(invYears.value) || 0;
-        const monthlyAdd = Number(monthDeposit.value) || 0;
+        const P = Number(initialInv.value)||0;
+        const rate = Number(intRate.value)||0;
+        const years = Number(invYears.value)||0;
+        const monthlyAdd = Number(monthDeposit.value)||0;
         const compoundTimes = Number(compFreq.value);
-
         resultYears.textContent = years;
-        const totalMonth = years * 12;
-        const totalPaid = P + (monthlyAdd * totalMonth);
-        const annualRate = rate / 100;
+        const totalMonth = years*12;
+        const totalPaid = P + (monthlyAdd*totalMonth);
+        const annualRate = rate/100;
         let finalAmount = 0;
 
         if (compoundTimes === 1) {
-            if (annualRate === 0) finalAmount = P + (monthlyAdd * totalMonth);
-            else finalAmount = P * Math.pow(1 + annualRate, years) + monthlyAdd * 12 * (Math.pow(1 + annualRate, years) - 1) / annualRate;
+            if (annualRate === 0) finalAmount = totalPaid;
+            else finalAmount = P*Math.pow(1+annualRate,years) + monthlyAdd*12*(Math.pow(1+annualRate,years)-1)/annualRate;
         } else {
-            const monthlyRate = annualRate / 12;
-            if (monthlyRate === 0) finalAmount = P + (monthlyAdd * totalMonth);
-            else finalAmount = P * Math.pow(1 + monthlyRate, totalMonth) + monthlyAdd * (Math.pow(1 + monthlyRate, totalMonth) - 1) / monthlyRate;
+            const monthlyRate = annualRate/12;
+            if (monthlyRate === 0) finalAmount = totalPaid;
+            else finalAmount = P*Math.pow(1+monthlyRate,totalMonth) + monthlyAdd*(Math.pow(1+monthlyRate,totalMonth)-1)/monthlyRate;
         }
 
         const interest = finalAmount - totalPaid;
-        const pct = totalPaid > 0 ? (interest / totalPaid * 100).toFixed(2) : 0;
-
+        const pct = totalPaid>0 ? (interest/totalPaid*100).toFixed(2) : 0;
         futureVal.textContent = formatCurrency(finalAmount);
         totalContrib.textContent = formatCurrency(totalPaid);
         totalInterest.textContent = formatCurrency(interest);
-        returnPct.textContent = pct + '%';
+        returnPct.textContent = pct+'%';
         updateChart();
     }
 
@@ -1280,22 +1103,31 @@ document.addEventListener('DOMContentLoaded', function() {
         const balanceData = [];
         const principalData = [];
 
-        for (let y = 0; y <= years; y++) {
-            labels.push(`Year ${y}`);
-            const monthCount = y * 12;
-            let balance = 0;
+        for (let i = 0; i <= years; i++) {
+            labels.push(i + 'Y');
+            const totalMonths = i * 12;
+            const principal = P + monthlyAdd * totalMonths;
+            principalData.push(Math.round(principal));
 
+            let balance = P;
             if (compoundTimes === 1) {
-                if (annualRate === 0) balance = P + monthlyAdd * monthCount;
-                else balance = P * Math.pow(1 + annualRate, y) + monthlyAdd * 12 * (Math.pow(1 + annualRate, y) - 1) / annualRate;
+                if (annualRate === 0) {
+                    balance = principal;
+                } else {
+                    balance = P * Math.pow(1 + annualRate, i) +
+                              monthlyAdd * 12 * (Math.pow(1 + annualRate, i) - 1) / annualRate;
+                }
             } else {
+                const months = i * 12;
                 const monthlyRate = annualRate / 12;
-                if (monthlyRate === 0) balance = P + monthlyAdd * monthCount;
-                else balance = P * Math.pow(1 + monthlyRate, monthCount) + monthlyAdd * (Math.pow(1 + monthlyRate, monthCount) - 1) / monthlyRate;
+                if (monthlyRate === 0) {
+                    balance = principal;
+                } else {
+                    balance = P * Math.pow(1 + monthlyRate, months) +
+                              monthlyAdd * (Math.pow(1 + monthlyRate, months) - 1) / monthlyRate;
+                }
             }
-            const principal = P + monthlyAdd * monthCount;
-            balanceData.push(balance);
-            principalData.push(principal);
+            balanceData.push(Math.round(balance));
         }
 
         if (growthChart) growthChart.destroy();
@@ -1305,57 +1137,76 @@ document.addEventListener('DOMContentLoaded', function() {
             data: {
                 labels: labels,
                 datasets: [
-                    { label: 'Total Balance', data: balanceData, borderColor: '#2563eb', backgroundColor: 'rgba(37,99,235,0.1)', fill: true, tension: 0.3 },
-                    { label: 'Total Principal', data: principalData, borderColor: '#64748b', backgroundColor: 'rgba(100,116,139,0.05)', fill: true, tension: 0.3 }
+                    {
+                        label: 'Total Balance (With Interest)',
+                        data: balanceData,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37,99,235,0.1)',
+                        fill: true,
+                        tension: 0.3,
+                        pointRadius: 3
+                    },
+                    {
+                        label: 'Principal Only (No Interest)',
+                        data: principalData,
+                        borderColor: '#9ca3af',
+                        backgroundColor: 'rgba(156,163,175,0.05)',
+                        fill: true,
+                        tension: 0.3,
+                        pointRadius: 2
+                    }
                 ]
             },
             options: {
-                responsive: true, maintainAspectRatio: false,
-                plugins: { legend: { position: 'top' } },
-                scales: { y: { beginAtZero: true } }
+                responsive: true,
+                plugins: {
+                    legend: { display: true, position: 'top' }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { callback: v => formatCurrency(v) }
+                    }
+                }
             }
         });
     }
 
-    // ====== 手机端点击修复：同时支持 click + touchstart ======
-    document.querySelectorAll('.quick-btn').forEach(btn => {
-        function run() {
-            const cfg = presetConfig[this.dataset.preset];
-            if (!cfg) return;
-            initialInv.value = cfg.initial;
-            intRate.value = cfg.rate;
-            invYears.value = cfg.years;
-            monthDeposit.value = cfg.monthly;
-            topHookLink.innerHTML = cfg.topText;
-            topHookLink.href = cfg.link;
-            bottomHookLink.innerHTML = cfg.bottomText;
-            bottomHookLink.href = cfg.link;
-            calculateTotal();
-        }
-        btn.addEventListener('click', run);
-        btn.addEventListener('touchstart', function(e){e.preventDefault(); run.call(this);});
-    });
-
     calcBtn.addEventListener('click', calculateTotal);
-    calcBtn.addEventListener('touchstart', function(e){e.preventDefault(); calculateTotal();});
 
-    copyResult.addEventListener('click', function() {
-        const text = `Initial Investment: $${initialInv.value}\nAnnual Interest Rate: ${intRate.value}%\nInvestment Period: ${invYears.value} years\nMonthly Deposits: $${monthDeposit.value}\nCompounding: ${compFreq.value === 1 ? 'Annually' : 'Monthly'}\n---\nFinal Value: ${futureVal.textContent}\nTotal Contributions: ${totalContrib.textContent}\nTotal Interest Earned: ${totalInterest.textContent}\nInterest Ratio: ${returnPct.textContent}`;
-        navigator.clipboard.writeText(text.trim()).then(() => {
-            this.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
-            setTimeout(() => this.innerHTML = '<i class="fa-solid fa-copy"></i> Copy Result', 1500);
+    document.querySelectorAll('.quick-btn').forEach(btn=>{
+        btn.addEventListener('click',()=>{
+            const key = btn.dataset.preset;
+            const s = presetConfig[key];
+            initialInv.value = s.initial;
+            intRate.value = s.rate;
+            invYears.value = s.years;
+            monthDeposit.value = s.monthly;
+            topHookLink.innerHTML = s.topText;
+            bottomHookLink.innerHTML = s.bottomText;
+            topHookLink.href = s.link;
+            bottomHookLink.href = s.link;
+            calculateTotal();
         });
     });
 
-    document.querySelectorAll('.faq-question').forEach(question => {
-        question.addEventListener('click', function() {
-            const ans = this.nextElementSibling;
-            const active = this.classList.contains('active');
-            document.querySelectorAll('.faq-question').forEach(q=>q.classList.remove('active'));
-            document.querySelectorAll('.faq-answer').forEach(a=>a.classList.remove('show'));
-            if (!active) { this.classList.add('active'); ans.classList.add('show'); }
+    copyResult.addEventListener('click',()=>{
+        const text = `Final Value: ${futureVal.textContent}\nTotal Contributions: ${totalContrib.textContent}\nTotal Interest: ${totalInterest.textContent}`;
+        navigator.clipboard.writeText(text).then(()=>{
+            copyResult.textContent = '✅ Copied!';
+            setTimeout(()=>copyResult.innerHTML='<i class="fa-solid fa-copy"></i> Copy Result',1500);
         });
-        question.addEventListener('touchstart', e=>e.preventDefault());
+    });
+
+    document.querySelectorAll('.faq-question').forEach(q=>{
+        q.addEventListener('click',()=>{
+            q.classList.toggle('active');
+            const a = q.nextElementSibling;
+            a.classList.toggle('show');
+            const icon = q.querySelector('i');
+            icon.classList.toggle('fa-chevron-up');
+            icon.classList.toggle('fa-chevron-down');
+        });
     });
 
     calculateTotal();
