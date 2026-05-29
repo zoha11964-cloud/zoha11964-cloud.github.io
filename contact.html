@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Smart Finance</title>
-    <meta name="description" content="Contact our support team for questions and feedback.">
+    <!-- SEO Meta Optimized V2.22 -->
+    <title>Contact Us | Smart Finance - Support & Feedback</title>
+    <meta name="description" content="Contact Smart Finance for support, feedback, questions, or bug reports about our free compound interest calculator and financial tools. Fast response.">
+    <meta name="keywords" content="contact smart finance, support, feedback, compound interest calculator help, financial tool contact">
+    <meta name="author" content="Smart Finance">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://calcfincepro.com/contact.html">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Google tag (gtag.js) -->
@@ -23,6 +27,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
         body {
             font-family: 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
@@ -44,13 +49,12 @@
             display: none !important;
         }
 
-        /* 顶部品牌栏 —— 全站统一 */
         header {
             background: #fff;
             padding: 2px 0;
             margin-bottom: 0;
             border-bottom: 1px solid #e2e8f0;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            box-shadow: 0 1px 3 rgba(0,0,0,0.05);
         }
         .header-inner {
             display: flex;
@@ -75,7 +79,6 @@
             color: #1a202c;
         }
 
-        /* 导航栏 —— 全站统一 */
         .main-nav {
             background: #1a202c;
             padding: 1px 0;
@@ -123,7 +126,6 @@
             .page-wrap { display: block; }
         }
 
-        /* Smart Tools 模块 —— 全站完全统一 */
         .cross-tools-bar {
             background: #fff;
             border-radius: 10px;
@@ -169,7 +171,8 @@
             transition: all 0.2s ease;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
         }
-        .cross-tool-card:hover {
+        .cross-tool-card:hover,
+        .cross-tool-card.active {
             background: #dbeafe;
             color: #2563eb;
             transform: translateY(-1px);
@@ -180,10 +183,8 @@
             color: #2563eb;
         }
 
-        /* 这里是你要调整的白框上下间距 */
         .hero-section {
             background: #fff;
-            /* 把原来的30px上下内边距，改成15px，减少无用空间 */
             padding: 15px 15px;
             text-align: center;
             margin-bottom: 10px;
@@ -225,8 +226,14 @@
             font-size: 15px;
             line-height: 1.7;
         }
+        .help-block a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .help-block a:hover {
+            text-decoration: underline;
+        }
 
-        /* 收窄联系表单宽度 */
         .contact-wrap {
             background: #fff;
             padding: 30px;
@@ -240,6 +247,13 @@
             font-size: 28px;
             color: #1a202c;
             margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .contact-wrap h2 i {
+            color: #2563eb;
+            font-size: 24px;
         }
         .contact-wrap p {
             color: #4a5568;
@@ -424,11 +438,9 @@
     <aside class="ad-left"></aside>
 
     <main>
-        <!-- 统一 Smart Tools 完整5个工具 -->
         <section class="cross-tools-bar">
             <div class="tools-title">
-                <i class="fa-solid fa-tools"></i>
-                Smart Tools
+                <i class="fa-solid fa-tools"></i> Smart Tools
             </div>
             <div class="cross-tools-grid">
                 <a href="https://compress.calcfincepro.com" class="cross-tool-card">
@@ -455,20 +467,19 @@
         </section>
 
         <section class="hero-section">
-            <h1 class="hero-title"><i class="fa-solid fa-envelope"></i> Contact</h1>
+            <h1 class="hero-title"><i class="fa-solid fa-envelope"></i> Contact Us</h1>
             <p class="hero-sub">Send us your questions and suggestions</p>
         </section>
 
         <div class="help-block">
             <h3><i class="fa-solid fa-headset"></i> We Are Here To Help</h3>
-            <p>Our team is always ready to assist you with any questions, feedback, technical issues or business cooperation requests related to our financial tools and services. Whether you need help using the compound interest calculator, have questions about retirement planning tools, savings planners or other personal finance features, feel free to reach out to us.</p>
+            <p>Our team is always ready to assist you with any questions, feedback, technical issues or business cooperation requests related to our financial tools and services. Whether you need help using the <a href="/#calcAnchor">compound interest calculator</a>, have questions about retirement planning tools, savings planners or other personal finance features, feel free to reach out to us.</p>
             <p>We strive to provide reliable and easy-to-use financial resources for every user. All your messages will be reviewed carefully, and we will respond to your inquiry as quickly as possible. Your opinions and suggestions help us continuously optimize our tools and improve the overall user experience for everyone who uses our platform.</p>
             <p>If you encounter bugs, calculation errors or page display problems while browsing, please describe the details clearly in the message. We appreciate your support and trust in Smart Finance.</p>
         </div>
 
-        <!-- 表单区块前置 -->
         <div class="contact-wrap">
-            <h2>Send Us a Message</h2>
+            <h2><i class="fa-solid fa-paper-plane"></i> Send Us a Message</h2>
             <p>Fill in the form below and we will reply as soon as possible.</p>
 
             <form action="https://formspree.io/f/xwvzqvgy" method="POST">
@@ -495,7 +506,6 @@
             </form>
         </div>
 
-        <!-- Common Topics 后置 -->
         <div class="topics-block">
             <h3>Common Topics</h3>
             <div class="topic-tags">
@@ -519,18 +529,14 @@
 <footer>
     <div class="footer-container">
         <div class="footer-seo-tags">
+            <span>contact smart finance</span>
             <span>compound interest calculator</span>
-            <span>investment calculator</span>
+            <span>support</span>
+            <span>feedback</span>
+            <span>financial tools help</span>
             <span>savings calculator</span>
             <span>retirement calculator</span>
-            <span>emergency fund guide</span>
-            <span>retirement planning guide</span>
-            <span>education savings plan</span>
-            <span>financial planning tips</span>
-            <span>investment growth guide</span>
-            <span>personal finance tools</span>
-            <span>money management tips</span>
-            <span>wealth building strategies</span>
+            <span>bug report</span>
         </div>
         <div class="footer-links">
             <div class="footer-col">
