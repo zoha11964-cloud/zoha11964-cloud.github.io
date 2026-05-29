@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compound Interest Calculator | Free Online Finance Calculator</title>
-    <meta name="description" content="Free online compound interest calculator to calculate investment growth, savings, and retirement planning. Visual chart + fast, accurate results.">
-    <meta name="keywords" content="compound interest calculator, finance calculator, investment calculator, savings calculator, retirement calculator">
+    <!-- SEO Meta Optimized -->
+    <title>Compound Interest Calculator - Free Online Investment & Savings Calculator</title>
+    <meta name="description" content="Use our free compound interest calculator to estimate investment growth, savings returns and retirement funds. View visual growth charts with annual & monthly compounding.">
+    <meta name="keywords" content="compound interest calculator, investment calculator, savings calculator, retirement calculator, compound interest formula">
     <meta name="author" content="Smart Finance">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://calcfincepro.com/">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
 
@@ -219,11 +221,6 @@
             justify-content: center;
             gap: 6px;
         }
-        .hero-title {
-            font-size: 32px;
-            margin-bottom: 10px;
-            color: #1a202c;
-        }
         .hero-sub {
             font-size: 16px;
             color: #4a5568;
@@ -268,7 +265,7 @@
             border-radius: 8px 8px 0 0;
             text-align: center;
         }
-        .calc-header h2 {
+        .calc-header h3 {
             font-size: 16px;
             margin-bottom: 0;
             font-weight: 600;
@@ -705,7 +702,6 @@
         }
 
         @media (max-width: 480px) {
-            .hero-title { font-size: 26px; }
             .result-grid { grid-template-columns: 1fr; }
             .calc-col { min-width: 100%; }
             .feature-grid, .hero-features { grid-template-columns: 1fr; }
@@ -761,9 +757,9 @@
 
     <main>
         <section class="cross-tools-bar">
-            <div class="tools-title">
+            <h3 class="tools-title">
                 <i class="fa-solid fa-tools"></i> Smart Tools
-            </div>
+            </h3>
             <div class="cross-tools-grid">
                 <a href="https://compress.calcfincepro.com" class="cross-tool-card">
                     <i class="fa-solid fa-image cross-tool-icon"></i><span>Image Compressor</span>
@@ -785,7 +781,7 @@
 
         <div id="calcAnchor">
             <div class="calc-header">
-                <h2>Calculate Your Investment Growth</h2>
+                <h3>Calculate Your Investment Growth</h3>
             </div>
             <div class="calc-card">
                 <div class="quick-fill">
@@ -835,7 +831,7 @@
                 </button>
 
                 <div class="result-box" id="resultArea">
-                    <div class="result-title">Your Investment Growth Results</div>
+                    <h3 class="result-title">Your Investment Growth Results</h3>
                     <div class="result-subtitle">Based on compounding annually for <span id="resultYears">20</span> years.</div>
 
                     <div class="future-value-card">
@@ -877,7 +873,7 @@
             </div>
         </div>
 
-        <div class="chart-wrap">
+        <div class="chart-wrap" aria-label="Investment balance growth line chart showing principal vs total balance with compound interest">
             <h3 class="chart-title">Investment Balance Growth Chart</h3>
             <canvas id="growthChart"></canvas>
         </div>
@@ -927,7 +923,7 @@
         </section>
 
         <section class="content-section faq-section">
-            <h2 class="section-title">FAQ</h2>
+            <h2 class="section-title">Frequently Asked Questions</h2>
             <div class="faq-list">
                 <div class="faq-item">
                     <div class="faq-question active">What is compound interest and how does it work? <i class="fa-solid fa-chevron-up"></i></div>
@@ -953,7 +949,6 @@
                     <div class="faq-question">Are the results guaranteed? <i class="fa-solid fa-chevron-down"></i></div>
                     <div class="faq-answer">Results are for reference only. Actual returns may vary due to market changes, fees and other factors.</div>
                 </div>
-
                 <div class="faq-item">
                     <div class="faq-question">What’s the difference between compound interest and simple interest? <i class="fa-solid fa-chevron-down"></i></div>
                     <div class="faq-answer">Simple interest only earns on the original principal. Compound interest earns on principal + accumulated interest, making your money grow much faster over time.</div>
@@ -974,11 +969,19 @@
                     <div class="faq-question">Why is starting early important for compounding? <i class="fa-solid fa-chevron-down"></i></div>
                     <div class="faq-answer">Time is the biggest factor in compounding. Starting 5–10 years earlier can double or triple your final savings without extra monthly effort.</div>
                 </div>
+                <div class="faq-item">
+                    <div class="faq-question">How to calculate compound interest with monthly contributions? <i class="fa-solid fa-chevron-down"></i></div>
+                    <div class="faq-answer">Input your initial investment, regular monthly deposits, interest rate and time period. This calculator will automatically compute total growth with recurring monthly contributions.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How much will my investment grow in 10, 20 or 30 years? <i class="fa-solid fa-chevron-down"></i></div>
+                    <div class="faq-answer">Adjust the investment period field to 10, 20 or 30 years. The calculator and growth chart will display your estimated final balance over different time spans.</div>
+                </div>
             </div>
         </section>
 
         <section class="content-section">
-            <h2 class="section-title">Related Tools</h2>
+            <h2 class="section-title">Related Financial Tools</h2>
             <div class="related-tools">
                 <div class="tool-card">
                     <div class="tool-header"><i class="fa-solid fa-arrow-trend-up"></i><h3>Retirement Calculator</h3></div>
@@ -1152,7 +1155,10 @@ document.addEventListener('DOMContentLoaded', function() {
             balanceData.push(Math.round(balance));
         }
 
-        if (growthChart) growthChart.destroy();
+        if (growthChart) {
+            growthChart.destroy();
+        }
+
         const ctx = document.getElementById('growthChart').getContext('2d');
         growthChart = new Chart(ctx, {
             type: 'line',
@@ -1160,43 +1166,45 @@ document.addEventListener('DOMContentLoaded', function() {
                 labels: labels,
                 datasets: [
                     {
-                        label: 'Total Balance (With Interest)',
+                        label: 'Total Balance',
                         data: balanceData,
                         borderColor: '#2563eb',
                         backgroundColor: 'rgba(37,99,235,0.1)',
                         fill: true,
                         tension: 0.3,
-                        pointRadius: 3
+                        borderWidth: 2
                     },
                     {
-                        label: 'Principal Only (No Interest)',
+                        label: 'Total Contributions',
                         data: principalData,
-                        borderColor: '#9ca3af',
-                        backgroundColor: 'rgba(156,163,175,0.05)',
-                        fill: true,
+                        borderColor: '#059669',
+                        backgroundColor: 'rgba(5,150,105,0.05)',
+                        fill: false,
                         tension: 0.3,
-                        pointRadius: 2
+                        borderWidth: 1.5
                     }
                 ]
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
                     legend: {
-                        display: true,
                         position: 'top',
                         labels: {
-                            usePointStyle: false,
-                            boxWidth: 20,
-                            boxHeight: 10,
-                            color: '#333'
+                            boxWidth: 12,
+                            font: { size: 12 }
                         }
                     }
                 },
                 scales: {
                     y: {
                         beginAtZero: true,
-                        ticks: { callback: v => formatCurrency(v) }
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value.toLocaleString();
+                            }
+                        }
                     }
                 }
             }
@@ -1205,38 +1213,44 @@ document.addEventListener('DOMContentLoaded', function() {
 
     calcBtn.addEventListener('click', calculateTotal);
 
-    document.querySelectorAll('.quick-btn').forEach(btn=>{
-        btn.addEventListener('click',()=>{
-            const key = btn.dataset.preset;
-            const s = presetConfig[key];
-            initialInv.value = s.initial;
-            intRate.value = s.rate;
-            invYears.value = s.years;
-            monthDeposit.value = s.monthly;
-            topHookLink.innerHTML = s.topText;
-            bottomHookLink.innerHTML = s.bottomText;
-            topHookLink.href = s.link;
-            bottomHookLink.href = s.link;
+    copyResult.addEventListener('click', function() {
+        const text = `Final Value: ${futureVal.textContent}\nTotal Contributions: ${totalContrib.textContent}\nTotal Interest: ${totalInterest.textContent}\nInterest Ratio: ${returnPct.textContent}`;
+        navigator.clipboard.writeText(text).then(() => {
+            const oldText = copyResult.innerHTML;
+            copyResult.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+            setTimeout(() => { copyResult.innerHTML = oldText; }, 1500);
+        });
+    });
+
+    document.querySelectorAll('.quick-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const key = this.dataset.preset;
+            const data = presetConfig[key];
+            initialInv.value = data.initial;
+            intRate.value = data.rate;
+            invYears.value = data.years;
+            monthDeposit.value = data.monthly;
+            topHookLink.textContent = data.topText;
+            topHookLink.href = data.link;
+            bottomHookLink.textContent = data.bottomText;
+            bottomHookLink.href = data.link;
             calculateTotal();
         });
     });
 
-    copyResult.addEventListener('click',()=>{
-        const text = `Final Value: ${futureVal.textContent}\nTotal Contributions: ${totalContrib.textContent}\nTotal Interest: ${totalInterest.textContent}`;
-        navigator.clipboard.writeText(text).then(()=>{
-            copyResult.textContent = '✅ Copied!';
-            setTimeout(()=>copyResult.innerHTML='<i class="fa-solid fa-copy"></i> Copy Result',1500);
-        });
-    });
-
-    document.querySelectorAll('.faq-question').forEach(q=>{
-        q.addEventListener('click',()=>{
-            q.classList.toggle('active');
-            const a = q.nextElementSibling;
-            a.classList.toggle('show');
+    document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+            const ans = q.nextElementSibling;
             const icon = q.querySelector('i');
-            icon.classList.toggle('fa-chevron-up');
-            icon.classList.toggle('fa-chevron-down');
+            ans.classList.toggle('show');
+            q.classList.toggle('active');
+            if (ans.classList.contains('show')) {
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
         });
     });
 
