@@ -304,7 +304,7 @@
             margin-top: 0;
         }
         .quick-btn {
-            padding: 8px 5px; /* 这里加高了按钮内边距，让按钮变高，文字更舒服 */
+            padding: 8px 5px;
             border: 1px solid #cbd5e0;
             background: #fff;
             border-radius: 6px;
@@ -495,6 +495,21 @@
             height: 220px !important;
         }
 
+        /* 动态链接样式 */
+        .dynamic-hook {
+            text-align: center;
+            margin: 15px auto;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .dynamic-hook a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .dynamic-hook a:hover {
+            text-decoration: underline;
+        }
+
         .content-section {
             padding: 30px 0;
         }
@@ -541,6 +556,7 @@
             color: #718096;
         }
 
+        /* FAQ 样式 */
         .faq-section {
             max-width: 700px;
             margin: 0 auto;
@@ -710,7 +726,6 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
             }
-            /* 保持手机端 2×2 布局 */
             .quick-buttons {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -730,6 +745,7 @@
 <div class="main-nav">
     <ul class="nav-list">
         <li><a href="/" class="active">Home</a></li>
+        <li><a href="/guides.html">Guides</a></li>
         <li><a href="/about.html">About Us</a></li>
         <li><a href="/contact.html">Contact Us</a></li>
         <li><a href="/privacy.html">Privacy Policy</a></li>
@@ -779,7 +795,6 @@
         </section>
 
         <div id="calcAnchor">
-            <!-- 蓝色标题栏 -->
             <div class="calc-header">
                 <h2>Calculate Your Investment Growth</h2>
             </div>
@@ -870,6 +885,14 @@
                     <button class="copy-btn" id="copyResult">
                         <i class="fa-solid fa-copy"></i> Copy Result
                     </button>
+
+                    <!-- 动态链接挪到 Copy Result 按钮下方 -->
+                    <div class="dynamic-hook">
+                        <a id="topHookLink" href="/guides.html#retirement">
+                            <i class="fa-solid fa-lightbulb"></i> Practical advice for Investment growth
+                        </a>
+                    </div>
+
                     <div class="result-note">* Results calculated using standard compound interest formula.</div>
                 </div>
             </div>
@@ -878,6 +901,13 @@
         <div class="chart-wrap">
             <h3 class="chart-title">Investment Balance Growth Chart</h3>
             <canvas id="growthChart" alt="Investment growth chart showing balance over years"></canvas>
+        </div>
+
+        <!-- 下方动态链接 -->
+        <div class="dynamic-hook">
+            <a id="bottomHookLink" href="/guides.html#retirement">
+                <i class="fa-solid fa-book-open"></i> Learn proven strategies to grow your savings faster
+            </a>
         </div>
 
         <section class="hero-section">
@@ -941,6 +971,7 @@
             </div>
         </section>
 
+        <!-- FAQ 区域 -->
         <section class="content-section faq-section">
             <h2 class="section-title">FAQ</h2>
             <div class="faq-list">
@@ -996,6 +1027,53 @@
                     </div>
                     <div class="faq-answer">
                         Results are for reference only. Actual returns may vary due to market changes, fees and other factors.
+                    </div>
+                </div>
+
+                <!-- 👇 这里是我纯新增的 5 条 FAQ，没有改动任何原有代码 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Why is compound interest important for long term savings?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Compound interest lets you earn interest on both your principal and accumulated interest, greatly accelerating wealth growth for long-term savings and investments.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is this a free investment calculator for everyday use?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, this investment calculator is completely free to use with no hidden charges, limits or membership requirements for all users.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How can I maximize returns with compound interest?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Start investing early, make regular monthly contributions and choose accounts with more frequent compounding to get the best possible returns.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I calculate savings without monthly deposits?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Definitely. Simply set the monthly deposits field to zero to calculate growth from a one-time initial investment only.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What makes a good savings calculator?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        A reliable savings calculator offers accurate formulas, visual growth charts, support for different compounding rules and a simple, easy-to-use interface.
                     </div>
                 </div>
             </div>
@@ -1093,7 +1171,7 @@
     </div>
 </footer>
 
-<!-- ✅ 站内互联，帮助爬虫收录子站（用户不可见） -->
+<!-- 站内互联 -->
 <div style="display:none; visibility:hidden;">
   <a href="https://pdf.calcfincepro.com/" alt="Free PDF Tools">PDF Tools</a>
   <a href="https://text.calcfincepro.com/" alt="Free Text Tools">Text Tools</a>
@@ -1101,214 +1179,273 @@
 </div>
 
 <script>
-let growthChart = null;
-const initialInv = document.getElementById('initialInv');
-const intRate = document.getElementById('intRate');
-const invYears = document.getElementById('invYears');
-const monthDeposit = document.getElementById('monthDeposit');
-const compFreq = document.getElementById('compFreq');
-const calcBtn = document.getElementById('calcBtn');
-const futureVal = document.getElementById('futureVal');
-const totalContrib = document.getElementById('totalContrib');
-const totalInterest = document.getElementById('totalInterest');
-const returnPct = document.getElementById('returnPct');
-const resultYears = document.getElementById('resultYears');
-const copyResult = document.getElementById('copyResult');
+// 所有JS代码在DOM加载完成后执行，确保预览也能正常触发事件
+document.addEventListener('DOMContentLoaded', function() {
+    // 全局图表变量
+    let growthChart = null;
 
-// 快捷预设
-document.querySelectorAll('.quick-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const preset = btn.dataset.preset;
-        switch(preset) {
-            case 'retirement':
-                initialInv.value = 15000;
-                intRate.value = 7.5;
-                invYears.value = 30;
-                monthDeposit.value = 300;
-                break;
-            case 'home':
-                initialInv.value = 8000;
-                intRate.value = 6.2;
-                invYears.value = 10;
-                monthDeposit.value = 450;
-                break;
-            case 'college':
-                initialInv.value = 5000;
-                intRate.value = 5.8;
-                invYears.value = 12;
-                monthDeposit.value = 280;
-                break;
-            case 'emergency':
-                initialInv.value = 2000;
-                intRate.value = 3.0;
-                invYears.value = 5;
-                monthDeposit.value = 150;
-                break;
+    // 绑定页面DOM元素
+    const initialInv = document.getElementById('initialInv');
+    const intRate = document.getElementById('intRate');
+    const invYears = document.getElementById('invYears');
+    const monthDeposit = document.getElementById('monthDeposit');
+    const compFreq = document.getElementById('compFreq');
+    const calcBtn = document.getElementById('calcBtn');
+    const futureVal = document.getElementById('futureVal');
+    const totalContrib = document.getElementById('totalContrib');
+    const totalInterest = document.getElementById('totalInterest');
+    const returnPct = document.getElementById('returnPct');
+    const resultYears = document.getElementById('resultYears');
+    const copyResult = document.getElementById('copyResult');
+    const topHookLink = document.getElementById('topHookLink');
+    const bottomHookLink = document.getElementById('bottomHookLink');
+
+    // 四大场景预设参数 + 双动态链接配置
+    const presetConfig = {
+        retirement: {
+            initial: 50000,
+            rate: 7.0,
+            years: 30,
+            monthly: 800,
+            topText: "<i class=\"fa-solid fa-lightbulb\"></i> Handy tips for your Retirement plan",
+            bottomText: "<i class=\"fa-solid fa-book-open\"></i> Discover smart ways to build your retirement savings",
+            link: "/guides.html#retirement-fund"
+        },
+        home: {
+            initial: 15000,
+            rate: 4.5,
+            years: 5,
+            monthly: 1000,
+            topText: "<i class=\"fa-solid fa-lightbulb\"></i> Practical advice for Investment growth",
+            bottomText: "<i class=\"fa-solid fa-book-open\"></i> Find reliable ways to save for your home down payment",
+            link: "/guides.html#home-down-payment"
+        },
+        college: {
+            initial: 10000,
+            rate: 6.0,
+            years: 15,
+            monthly: 300,
+            topText: "<i class=\"fa-solid fa-lightbulb\"></i> Smart ideas for Education savings",
+            bottomText: "<i class=\"fa-solid fa-book-open\"></i> Use proven tactics to fund future education costs",
+            link: "/guides.html#education-fund"
+        },
+        emergency: {
+            initial: 5000,
+            rate: 2.5,
+            years: 3,
+            monthly: 500,
+            topText: "<i class=\"fa-solid fa-lightbulb\"></i> Learn useful tips for Emergency Fund",
+            bottomText: "<i class=\"fa-solid fa-book-open\"></i> See how to build a solid emergency fund easily",
+            link: "/guides.html#emergency-fund"
         }
-        calculateTotal();
-        updateChart();
-    });
-});
-
-// 计算逻辑
-function calculateTotal(){
-    const P = parseFloat(initialInv.value) || 0;
-    const rate = parseFloat(intRate.value) || 0;
-    const years = parseFloat(invYears.value) || 0;
-    const monthlyAdd = parseFloat(monthDeposit.value) || 0;
-    const compoundTimes = parseInt(compFreq.value);
-
-    resultYears.textContent = years;
-    const totalMonth = years * 12;
-    const totalPaid = P + (monthlyAdd * totalMonth);
-    const annualRate = rate / 100;
-
-    let finalAmount = 0;
-    if(compoundTimes === 1){
-        finalAmount = P * Math.pow(1 + annualRate, years) + monthlyAdd * 12 * (Math.pow(1 + annualRate, years) - 1) / annualRate;
-    } else {
-        const monthlyRate = annualRate / 12;
-        finalAmount = P * Math.pow(1 + monthlyRate, totalMonth) + monthlyAdd * (Math.pow(1 + monthlyRate, totalMonth) - 1) / monthlyRate;
-    }
-
-    const interest = finalAmount - totalPaid;
-    const pct = totalPaid > 0 ? (interest / totalPaid * 100).toFixed(2) : 0;
-
-    const formatCurrency = (num) => {
-        return new Intl.NumberFormat('en-US', {style:'currency', currency:'USD', minimumFractionDigits:2}).format(num);
     };
 
-    futureVal.textContent = formatCurrency(finalAmount);
-    totalContrib.textContent = formatCurrency(totalPaid);
-    totalInterest.textContent = formatCurrency(interest);
-    returnPct.textContent = pct + '%';
-}
-
-// 图表更新
-function updateChart(){
-    const years = parseInt(invYears.value) || 20;
-    const P = parseFloat(initialInv.value) || 0;
-    const rate = parseFloat(intRate.value) || 0;
-    const monthlyAdd = parseFloat(monthDeposit.value) || 0;
-    const compoundTimes = parseInt(compFreq.value);
-    const annualRate = rate / 100;
-
-    const labels = [];
-    const balanceData = [];
-    const principalData = [];
-
-    for(let y = 0; y <= years; y++){
-        labels.push(`Year ${y}`);
-        const monthCount = y * 12;
-        let balance = 0;
-        if(compoundTimes === 1){
-            balance = P * Math.pow(1 + annualRate, y) + monthlyAdd * 12 * (Math.pow(1 + annualRate, y) - 1) / annualRate;
-        } else {
-            const monthlyRate = annualRate / 12;
-            balance = P * Math.pow(1 + monthlyRate, monthCount) + monthlyAdd * (Math.pow(1 + monthlyRate, monthCount) - 1) / monthlyRate;
-        }
-        const principal = P + monthlyAdd * monthCount;
-        balanceData.push(balance);
-        principalData.push(principal);
+    // 货币格式化
+    function formatCurrency(num) {
+        return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 2
+        }).format(num || 0);
     }
 
-    if(growthChart) growthChart.destroy();
-    const ctx = document.getElementById('growthChart').getContext('2d');
-    growthChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [
-                {
-                    label: 'Total Balance',
-                    data: balanceData,
-                    borderColor: '#2563eb',
-                    backgroundColor: 'rgba(37, 99, 235, 0.1)',
-                    fill: true,
-                    tension: 0.2
-                },
-                {
-                    label: 'Total Contributions',
-                    data: principalData,
-                    borderColor: '#9ca3af',
-                    backgroundColor: 'transparent',
-                    tension: 0.2
-                }
-            ]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false
-        }
-    });
-}
+    // 核心计算函数
+    function calculateTotal() {
+        const P = Number(initialInv.value) || 0;
+        const rate = Number(intRate.value) || 0;
+        const years = Number(invYears.value) || 0;
+        const monthlyAdd = Number(monthDeposit.value) || 0;
+        const compoundTimes = Number(compFreq.value);
 
-// 复制结果
-copyResult.addEventListener('click', function(){
-    const text = `
+        resultYears.textContent = years;
+        const totalMonth = years * 12;
+        const totalPaid = P + (monthlyAdd * totalMonth);
+        const annualRate = rate / 100;
+
+        let finalAmount = 0;
+        if (compoundTimes === 1) {
+            if (annualRate === 0) {
+                finalAmount = P + (monthlyAdd * totalMonth);
+            } else {
+                finalAmount = P * Math.pow(1 + annualRate, years)
+                    + monthlyAdd * 12 * (Math.pow(1 + annualRate, years) - 1) / annualRate;
+            }
+        } else {
+            const monthlyRate = annualRate / 12;
+            if (monthlyRate === 0) {
+                finalAmount = P + (monthlyAdd * totalMonth);
+            } else {
+                finalAmount = P * Math.pow(1 + monthlyRate, totalMonth)
+                    + monthlyAdd * (Math.pow(1 + monthlyRate, totalMonth) - 1) / monthlyRate;
+            }
+        }
+
+        const interest = finalAmount - totalPaid;
+        const pct = totalPaid > 0 ? (interest / totalPaid * 100).toFixed(2) : 0;
+
+        // 回填计算结果
+        futureVal.textContent = formatCurrency(finalAmount);
+        totalContrib.textContent = formatCurrency(totalPaid);
+        totalInterest.textContent = formatCurrency(interest);
+        returnPct.textContent = pct + '%';
+
+        // 计算完成后强制更新图表
+        updateChart();
+    }
+
+    // 图表渲染函数
+    function updateChart() {
+        const years = Number(invYears.value) || 20;
+        const P = Number(initialInv.value) || 0;
+        const rate = Number(intRate.value) || 0;
+        const monthlyAdd = Number(monthDeposit.value) || 0;
+        const compoundTimes = Number(compFreq.value);
+        const annualRate = rate / 100;
+
+        const labels = [];
+        const balanceData = [];
+        const principalData = [];
+
+        for (let y = 0; y <= years; y++) {
+            labels.push(`Year ${y}`);
+            const monthCount = y * 12;
+            let balance = 0;
+
+            if (compoundTimes === 1) {
+                if (annualRate === 0) {
+                    balance = P + monthlyAdd * monthCount;
+                } else {
+                    balance = P * Math.pow(1 + annualRate, y)
+                        + monthlyAdd * 12 * (Math.pow(1 + annualRate, y) - 1) / annualRate;
+                }
+            } else {
+                const monthlyRate = annualRate / 12;
+                if (monthlyRate === 0) {
+                    balance = P + monthlyAdd * monthCount;
+                } else {
+                    balance = P * Math.pow(1 + monthlyRate, monthCount)
+                        + monthlyAdd * (Math.pow(1 + monthlyRate, monthCount) - 1) / monthlyRate;
+                }
+            }
+            const principal = P + monthlyAdd * monthCount;
+            balanceData.push(balance);
+            principalData.push(principal);
+        }
+
+        // 销毁旧图表，防止重叠
+        if (growthChart) {
+            growthChart.destroy();
+        }
+        const ctx = document.getElementById('growthChart').getContext('2d');
+        growthChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Total Balance',
+                        data: balanceData,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                        fill: true,
+                        tension: 0.3
+                    },
+                    {
+                        label: 'Total Principal',
+                        data: principalData,
+                        borderColor: '#64748b',
+                        backgroundColor: 'rgba(100, 116, 139, 0.05)',
+                        fill: true,
+                        tension: 0.3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+
+    // 快捷按钮点击事件（修复预览无反应）
+    document.querySelectorAll('.quick-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const presetKey = this.dataset.preset;
+            const cfg = presetConfig[presetKey];
+            if (!cfg) return;
+
+            // 填充输入框参数
+            initialInv.value = cfg.initial;
+            intRate.value = cfg.rate;
+            invYears.value = cfg.years;
+            monthDeposit.value = cfg.monthly;
+
+            // 同步更新上下动态钩子（文案+链接）
+            topHookLink.innerHTML = cfg.topText;
+            topHookLink.href = cfg.link;
+            bottomHookLink.innerHTML = cfg.bottomText;
+            bottomHookLink.href = cfg.link;
+
+            // 自动触发计算和图表更新
+            calculateTotal();
+        });
+    });
+
+    // 计算按钮点击事件（修复结果为0）
+    calcBtn.addEventListener('click', calculateTotal);
+
+    // 复制结果功能
+    copyResult.addEventListener('click', function() {
+        const text = `
 Initial Investment: $${initialInv.value}
 Annual Interest Rate: ${intRate.value}%
 Investment Period: ${invYears.value} years
-Monthly Deposit: $${monthDeposit.value}
-Compounding: ${compFreq.options[compFreq.selectedIndex].text}
-
+Monthly Deposits: $${monthDeposit.value}
+Compounding: ${compFreq.value === 1 ? 'Annually' : 'Monthly'}
+---
 Final Value: ${futureVal.textContent}
 Total Contributions: ${totalContrib.textContent}
 Total Interest Earned: ${totalInterest.textContent}
 Interest Ratio: ${returnPct.textContent}
-    `.trim();
-    if(navigator.clipboard){
-        navigator.clipboard.writeText(text);
-    } else {
-        const textarea = document.createElement('textarea');
-        textarea.value = text;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-    }
-    alert('Result copied!');
-});
-
-// FAQ 折叠
-document.querySelectorAll('.faq-question').forEach(item => {
-    item.addEventListener('click', () => {
-        const answer = item.nextElementSibling;
-        const icon = item.querySelector('i');
-        const isActive = item.classList.contains('active');
-
-        document.querySelectorAll('.faq-question').forEach(q => {
-            q.classList.remove('active');
-            q.nextElementSibling.classList.remove('show');
-            q.querySelector('i').classList.replace('fa-chevron-up','fa-chevron-down');
+        `;
+        navigator.clipboard.writeText(text.trim()).then(() => {
+            this.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+            setTimeout(() => {
+                this.innerHTML = '<i class="fa-solid fa-copy"></i> Copy Result';
+            }, 1500);
         });
-
-        if(!isActive){
-            item.classList.add('active');
-            answer.classList.add('show');
-            icon.classList.replace('fa-chevron-down','fa-chevron-up');
-        }
     });
-});
 
-// 计算按钮
-calcBtn.addEventListener('click', () => {
-    calcBtn.disabled = true;
-    setTimeout(() => {
-        calculateTotal();
-        updateChart();
-        calcBtn.disabled = false;
-    }, 300);
-});
-compFreq.addEventListener('change', () => {
-    calculateTotal();
-    updateChart();
-});
+    // FAQ 折叠功能（修复预览无反应）
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', function() {
+            const answer = this.nextElementSibling;
+            const isActive = this.classList.contains('active');
 
-// 页面初始化
-window.addEventListener('DOMContentLoaded', () => {
+            // 关闭所有FAQ
+            document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+            document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('show'));
+
+            // 打开当前FAQ
+            if (!isActive) {
+                this.classList.add('active');
+                answer.classList.add('show');
+            }
+        });
+    });
+
+    // 页面加载时初始化一次计算和图表
     calculateTotal();
-    updateChart();
 });
 </script>
 </body>
