@@ -351,7 +351,7 @@
         input:focus, select:focus {
             outline: none;
             border-color: #2563eb;
-            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15));
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
         }
         .calc-main-btn {
             width: 100%;
@@ -495,7 +495,7 @@
         }
         .dynamic-hook {
             text-align: center;
-            margin: 5px auto !important;
+            margin: 15px auto;
             font-size: 15px;
             font-weight: 600;
         }
@@ -707,40 +707,15 @@
             font-size: 11px;
             color: #94a3b8;
         }
-
-        /* 高度压缩优化（已整合，不影响任何功能） */
-        .quick-btn { padding: 6px 4px !important; min-height: 40px !important; }
-        .cross-tools-bar { padding: 3px 6px !important; margin:0 0 3px !important; }
-        .tools-title { padding:1px 0 !important; }
-        .cross-tool-card { padding:1px 3px !important; min-height:40px !important; }
-        .main-nav { padding:0 !important; }
-        .nav-list li a { min-height:40px !important; padding:1px 6px !important; }
-
-    /* 你所有原来的 CSS 样式（不动） */
-    * { ... }
-    body { ... }
-    .cross-tools-bar { ... }
-    .dynamic-hook { ... }
-    /* ... 一直往下 ... */
-
-    /* 👇 你要加的补丁代码，直接贴在这里 👇 */
-    @media (max-width: 480px) {
-      .cross-tool-card {
-        min-width: 70px !important;
-        justify-content: center !important;
-      }
-      .result-grid .result-small-card {
-        width: 100% !important;
-        text-align: center !important;
-      }
-      .dynamic-hook a {
-        display: inline-flex !important;
-        align-items: center !important;
-        line-height: 1.2 !important;
-      }
-    }
-
-</style>
+        @media (max-width: 480px) {
+            .result-grid { grid-template-columns: 1fr; }
+            .calc-col { min-width: 100%; }
+            .feature-grid, .hero-features { grid-template-columns: 1fr; }
+            .cross-tools-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .quick-buttons { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .quick-btn { min-height: 44px !important; padding: 10px 4px !important; font-size: 11px !important; pointer-events: auto !important; }
+            .calc-main-btn { min-height: 44px !important; font-size: 16px !important; }
+        }
     </style>
 </head>
 <body>
@@ -1077,6 +1052,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
+    // 格式化货币
     function formatCurrency(num) {
         return new Intl.NumberFormat('en-US', { 
             style:'currency', 
@@ -1085,6 +1061,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }).format(num || 0);
     }
 
+    // 更新图表
     function updateChart() {
         const years = Number(invYears.value) || 20;
         const P = Number(initialInv.value) || 0;
@@ -1123,6 +1100,7 @@ document.addEventListener('DOMContentLoaded', function() {
             balanceData.push(currBalance);
         }
 
+        // 销毁旧图表
         if (growthChart) {
             growthChart.destroy();
         }
@@ -1168,6 +1146,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // 核心计算
     function calculateTotal() {
         const P = Number(initialInv.value) || 0;
         const rate = Number(intRate.value) || 0;
@@ -1209,6 +1188,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateChart();
     }
 
+    // 快捷预设按钮
     quickBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             const key = this.dataset.preset;
@@ -1220,15 +1200,16 @@ document.addEventListener('DOMContentLoaded', function() {
             invYears.value = cfg.years;
             monthDeposit.value = cfg.monthly;
 
-            topHookLink.innerHTML = `<i class="fa-solid fa-lightbulb"></i> ${cfg.topText}`;
+            topHookLink.textContent = `<i class="fa-solid fa-lightbulb"></i> ${cfg.topText}`;
             topHookLink.href = cfg.link;
-            bottomHookLink.innerHTML = `<i class="fa-solid fa-book-open"></i> ${cfg.bottomText}`;
+            bottomHookLink.textContent = `<i class="fa-solid fa-book-open"></i> ${cfg.bottomText}`;
             bottomHookLink.href = cfg.link;
 
             calculateTotal();
         });
     });
 
+    // FAQ 折叠展开
     faqItems.forEach(question => {
         question.addEventListener('click', function() {
             const answer = this.nextElementSibling;
@@ -1247,8 +1228,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // 计算按钮点击
     calcBtn.addEventListener('click', calculateTotal);
 
+    // 复制结果
     copyResult.addEventListener('click', function() {
         const text = `
 Final Value: ${futureVal.textContent}
@@ -1266,6 +1249,7 @@ Interest Ratio: ${returnPct.textContent}
         });
     });
 
+    // 页面初始化执行一次
     calculateTotal();
 });
 </script>
