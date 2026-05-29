@@ -1188,26 +1188,27 @@ document.addEventListener('DOMContentLoaded', function() {
         updateChart();
     }
 
-    // 快捷预设按钮
-    quickBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const key = this.dataset.preset;
-            const cfg = presetConfig[key];
-            if (!cfg) return;
+// 快捷预设按钮（修正版）
+quickBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+        const key = this.dataset.preset;
+        const cfg = presetConfig[key];
+        if (!cfg) return;
 
-            initialInv.value = cfg.initial;
-            intRate.value = cfg.rate;
-            invYears.value = cfg.years;
-            monthDeposit.value = cfg.monthly;
+        initialInv.value = cfg.initial;
+        intRate.value = cfg.rate;
+        invYears.value = cfg.years;
+        monthDeposit.value = cfg.monthly;
 
-            topHookLink.textContent = `<i class="fa-solid fa-lightbulb"></i> ${cfg.topText}`;
-            topHookLink.href = cfg.link;
-            bottomHookLink.textContent = `<i class="fa-solid fa-book-open"></i> ${cfg.bottomText}`;
-            bottomHookLink.href = cfg.link;
+        // 修正：用innerHTML而不是textContent，让<i>标签被解析为图标
+        topHookLink.innerHTML = `<i class="fa-solid fa-lightbulb"></i> ${cfg.topText}`;
+        topHookLink.href = cfg.link;
+        bottomHookLink.innerHTML = `<i class="fa-solid fa-book-open"></i> ${cfg.bottomText}`;
+        bottomHookLink.href = cfg.link;
 
-            calculateTotal();
-        });
+        calculateTotal();
     });
+});
 
     // FAQ 折叠展开
     faqItems.forEach(question => {
