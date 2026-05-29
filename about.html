@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Smart Finance</title>
-    <meta name="description" content="Best free compound interest calculator online.">
+    <!-- SEO Meta Optimized V2.21 -->
+    <title>About Us | Smart Finance - Free Compound Interest Calculator & Financial Tools</title>
+    <meta name="description" content="Smart Finance provides 100% free, accurate, and easy-to-use compound interest calculators, financial guides, and savings tools for everyone. Secure, private, no registration.">
+    <meta name="keywords" content="about smart finance, free compound interest calculator, financial tools, savings calculator, retirement calculator, emergency fund guide, investment growth">
+    <meta name="author" content="Smart Finance">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://calcfincepro.com/about.html">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googgtagmanager.com/gtag/js?id=G-70W3ZXHHPY"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-70W3ZXHHPY"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -23,6 +27,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
         body {
             font-family: 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
@@ -51,7 +56,6 @@
             display: none;
         }
 
-        /* 顶部品牌栏 —— 与首页完全统一 */
         header {
             background: #fff;
             padding: 2px 0;
@@ -82,7 +86,6 @@
             color: #1a202c;
         }
 
-        /* 导航栏 —— 与首页完全统一 */
         .main-nav {
             background: #1a202c;
             padding: 1px 0;
@@ -132,7 +135,6 @@
             .ad-left, .ad-right { display: none; }
         }
 
-        /* Smart Tools 模块 —— 首页完全同步 */
         .cross-tools-bar {
             background: #fff;
             border-radius: 10px;
@@ -178,7 +180,8 @@
             transition: all 0.2s ease;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
         }
-        .cross-tool-card:hover {
+        .cross-tool-card:hover,
+        .cross-tool-card.active {
             background: #dbeafe;
             color: #2563eb;
             transform: translateY(-1px);
@@ -212,7 +215,7 @@
         }
         .hero-sub {
             font-size: 16px;
-            color: #4a5568;
+            color: #4a568;
             margin-bottom: 15px;
         }
         .hero-desc {
@@ -258,12 +261,26 @@
             font-size: 28px;
             color: #1a202c;
             margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .content-wrap h2 i {
+            color: #2563eb;
+            font-size: 24px;
         }
         .content-wrap p {
             font-size: 16px;
-            color: #4a5568;
+            color: #4a568;
             margin-bottom: 16px;
             line-height: 1.8;
+        }
+        .content-wrap a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .content-wrap a:hover {
+            text-decoration: underline;
         }
 
         .info-bar {
@@ -276,6 +293,7 @@
             font-size: 16px;
             line-height: 1.8;
             max-width: 800px;
+            text-align: center;
         }
         .info-bar a {
             color: #2563eb;
@@ -362,6 +380,9 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
             }
+            .content-wrap {
+                padding: 20px 15px;
+            }
         }
     </style>
 </head>
@@ -398,11 +419,9 @@
     </aside>
 
     <main>
-        <!-- Smart Tools 完整统一模块 -->
         <section class="cross-tools-bar">
             <div class="tools-title">
-                <i class="fa-solid fa-tools"></i>
-                Smart Tools
+                <i class="fa-solid fa-tools"></i> Smart Tools
             </div>
             <div class="cross-tools-grid">
                 <a href="https://compress.calcfincepro.com" class="cross-tool-card">
@@ -430,9 +449,9 @@
 
         <section class="hero-section">
             <div class="hero-badge"><i class="fa-solid fa-star"></i> TOP-RATED FINANCIAL TOOL</div>
-            <h1 class="hero-title">About</h1>
-            <p class="hero-sub">Learn more about our free financial tools</p>
-            <p class="hero-desc">We provide easy-to-use, accurate financial calculators for investment and savings planning.</p>
+            <h1 class="hero-title">About Smart Finance</h1>
+            <p class="hero-sub">Free, Reliable Financial Calculators for Everyone</p>
+            <p class="hero-desc">We make financial planning simple, accurate, and accessible with 100% free tools and guides.</p>
             <div class="hero-features">
                 <div class="hero-feature-item"><i class="fa-solid fa-calculator"></i><span>Accurate Calculations</span></div>
                 <div class="hero-feature-item"><i class="fa-solid fa-chart-line"></i><span>Financial Planning</span></div>
@@ -442,16 +461,18 @@
         </section>
 
         <div class="content-wrap">
-            <h2>Our Story & Mission</h2>
+            <h2><i class="fa-solid fa-circle-info"></i> Our Story & Mission</h2>
             <p>Smart Finance was founded with a clear and simple mission: to make high-quality financial planning accessible to everyone, regardless of their background or experience. We noticed that many people struggle with personal finance, savings strategies, and investment planning because professional tools are often expensive or too complex to use. That’s why we decided to build a platform that offers free, reliable, and user-friendly financial calculators to help people take control of their money.</p>
-            <p>Our core focus is to provide practical tools for compound interest calculation, emergency fund planning, retirement savings, education fund preparation, and long-term investment growth. Every tool we develop is designed to deliver accurate results while keeping the interface clean and easy to understand. We believe that good financial planning starts with clear numbers and reliable calculations.</p>
+            <p>Our core focus is to provide practical tools for <a href="/#calcAnchor">compound interest calculation</a>, emergency fund planning, retirement savings, education fund preparation, and long-term investment growth. Every tool we develop is designed to deliver accurate results while keeping the interface clean and easy to understand. We believe that good financial planning starts with clear numbers and reliable calculations.</p>
             <p>All calculations on our platform run directly in your browser, which means your personal data stays private and secure. We never store or share your financial information, ensuring full privacy for every user. Our website is optimized for speed and works smoothly on all devices, including desktops, tablets, and mobile phones.</p>
-            <p>We are committed to continuously improving our tools and creating helpful guides to support your financial journey. Whether you are building an emergency fund, planning for retirement, saving for education, or learning to improve investment returns, Smart Finance is here to provide the resources you need. Our goal is to help you build long-term wealth, achieve financial stability, and make confident financial decisions for yourself and your family.</p>
+            <p>We are committed to continuously improving our tools and creating helpful <a href="/guides.html">financial guides</a> to support your financial journey. Whether you are building an emergency fund, planning for retirement, saving for education, or learning to improve investment returns, Smart Finance is here to provide the resources you need. Our goal is to help you build long-term wealth, achieve financial stability, and make confident financial decisions for yourself and your family.</p>
             <p>Thank you for trusting our platform. We are proud to support your financial growth every step of the way.</p>
         </div>
 
         <div class="info-bar">
-            Try our free <a href="/#calcAnchor">compound interest calculator</a> today. Please <a href="disclaimer.html">read our disclaimer</a> before use. If you have any questions, please visit our <a href="contact.html">Contact</a> page.
+            Try our free <a href="/#calcAnchor">compound interest calculator</a> today. Please <a href="/disclaimer.html">read our disclaimer</a> before use.
+            <br>
+            If you have any questions, please visit our <a href="/contact.html">Contact</a> page.
             <br>
             <a href="/#calcAnchor" class="main-btn">Use the calculator now</a>
         </div>
@@ -469,18 +490,16 @@
 <footer>
     <div class="footer-container">
         <div class="footer-seo-tags">
+            <span>about smart finance</span>
             <span>compound interest calculator</span>
-            <span>investment calculator</span>
+            <span>free financial tools</span>
             <span>savings calculator</span>
             <span>retirement calculator</span>
             <span>emergency fund guide</span>
-            <span>retirement planning guide</span>
-            <span>education savings plan</span>
-            <span>financial planning tips</span>
-            <span>investment growth guide</span>
-            <span>personal finance tools</span>
-            <span>money management tips</span>
-            <span>wealth building strategies</span>
+            <span>investment growth</span>
+            <span>financial planning</span>
+            <span>personal finance</span>
+            <span>money management</span>
         </div>
         <div class="footer-links">
             <div class="footer-col">
