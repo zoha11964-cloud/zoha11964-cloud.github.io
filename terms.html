@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service | Smart Finance</title>
-    <meta name="description" content="Website terms of service and usage rules for all financial tools and calculators.">
+    <title>Terms of Service | Smart Finance - Usage Rules</title>
+    <meta name="description" content="Review our Terms of Service for rules and guidelines when using our financial calculators and website services.">
+    <meta name="keywords" content="terms of service, usage rules, website terms, smart finance">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://calcfincepro.com/terms.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -23,6 +24,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
         body {
             font-family: 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
@@ -44,7 +46,6 @@
             display: none !important;
         }
 
-        /* 顶部品牌栏 —— 全站统一 */
         header {
             background: #fff;
             padding: 2px 0;
@@ -75,7 +76,6 @@
             color: #1a202c;
         }
 
-        /* 导航栏 —— 全站统一 */
         .main-nav {
             background: #1a202c;
             padding: 1px 0;
@@ -123,7 +123,6 @@
             .page-wrap { display: block; }
         }
 
-        /* Smart Tools 模块 —— 全站完全统一 */
         .cross-tools-bar {
             background: #fff;
             border-radius: 10px;
@@ -169,7 +168,8 @@
             transition: all 0.2s ease;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0.1);
         }
-        .cross-tool-card:hover {
+        .cross-tool-card:hover,
+        .cross-tool-card.active {
             background: #dbeafe;
             color: #2563eb;
             transform: translateY(-1px);
@@ -180,7 +180,6 @@
             color: #2563eb;
         }
 
-        /* Banner 对齐 Privacy/Contact 样式，缩减上下留白 */
         .hero-section {
             background: #fff;
             padding: 15px 15px;
@@ -199,7 +198,6 @@
             margin-bottom: 0;
         }
 
-        /* 正文白框 缩减上下内边距，和全站统一 */
         .content-wrap {
             background: #fff;
             padding: 20px 30px;
@@ -268,7 +266,6 @@
             gap: 20px;
             justify-content: space-between;
         }
-        /* 补齐SEO热词，和全站页面数量一致 */
         .footer-seo-tags {
             flex: 1 1 260px;
             display: flex;
@@ -317,7 +314,7 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
             }
-            .related-links {
+            .related-links, .content-wrap {
                 padding: 15px 20px;
             }
         }
@@ -334,7 +331,6 @@
     </div>
 </header>
 
-<!-- 全站统一导航 -->
 <div class="main-nav">
     <ul class="nav-list">
         <li><a href="/">Home</a></li>
@@ -351,11 +347,9 @@
     <aside class="ad-left"></aside>
 
     <main>
-        <!-- 统一工具模块 -->
         <section class="cross-tools-bar">
             <div class="tools-title">
-                <i class="fa-solid fa-tools"></i>
-                Smart Tools
+                <i class="fa-solid fa-tools"></i> Smart Tools
             </div>
             <div class="cross-tools-grid">
                 <a href="https://compress.calcfincepro.com" class="cross-tool-card">
@@ -409,7 +403,6 @@
 
 <footer>
     <div class="footer-container">
-        <!-- 完整补充SEO热词 -->
         <div class="footer-seo-tags">
             <span>compound interest calculator</span>
             <span>investment calculator</span>
