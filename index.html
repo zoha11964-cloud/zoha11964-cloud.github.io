@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO Meta Optimized -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#1a202c">
     <title>Compound Interest Calculator - Free Online Investment & Savings Calculator</title>
     <meta name="description" content="Use our free compound interest calculator to estimate investment growth, savings returns and retirement funds. View visual growth charts with annual & monthly compounding.">
     <meta name="keywords" content="compound interest calculator, investment calculator, savings calculator, retirement calculator, compound interest formula">
@@ -11,13 +12,19 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://calcfincepro.com/">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 
-    <!-- Google Ads -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5761005665703697" crossorigin="anonymous"></script>
-
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-70W3ZXHHPY"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -51,7 +58,6 @@
         #calcAnchor {
             scroll-margin-top: 15px;
         }
-
         .ad-slot {
             background: #f8fafc;
             text-align: center;
@@ -62,7 +68,6 @@
             margin: 15px 0;
             display: none;
         }
-
         header {
             background: #fff;
             padding: 2px 0;
@@ -92,7 +97,6 @@
             font-weight: 600;
             color: #1a202c;
         }
-
         .main-nav {
             background: #1a202c;
             padding: 1px 0;
@@ -108,7 +112,9 @@
             padding: 0 10px;
         }
         .nav-list li a {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: #e2e8f0;
             text-decoration: none;
             padding: 2px 8px;
@@ -116,13 +122,14 @@
             border-radius: 4px;
             white-space: nowrap;
             font-weight: 500;
+            min-height: 44px;
+            min-width: 44px;
         }
         .nav-list li a.active,
         .nav-list li a:hover {
             background: #1d4ed8;
             color: #fff;
         }
-
         .page-wrap {
             max-width: 1200px;
             margin: 0 auto;
@@ -147,7 +154,6 @@
                 display: none;
             }
         }
-
         .cross-tools-bar {
             background: #fff;
             border-radius: 10px;
@@ -192,6 +198,8 @@
             font-size: 12px;
             transition: all 0.2s ease;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
+            min-height: 44px;
+            min-width: 44px;
         }
         .cross-tool-card:hover,
         .cross-tool-card.active {
@@ -204,7 +212,6 @@
             font-size: 15px;
             color: #2563eb;
         }
-
         .hero-section {
             background: #fff;
             padding: 30px 15px;
@@ -255,7 +262,6 @@
         .hero-feature-item span {
             font-size: 14px;
         }
-
         .calc-header {
             background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
             color: #fff;
@@ -279,7 +285,6 @@
             margin: 0 auto 30px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.05);
         }
-
         .quick-fill {
             margin-top: 0;
         }
@@ -310,13 +315,13 @@
             justify-content: center;
             gap: 4px;
             white-space: nowrap;
+            min-height: 44px;
         }
         .quick-btn:hover {
             background: #eff6ff;
             border-color: #2563eb;
             color: #2563eb;
         }
-
         .calc-row {
             display: flex;
             flex-wrap: wrap;
@@ -341,13 +346,13 @@
             border-radius: 5px;
             font-size: 14px;
             background: #fff;
+            min-height: 44px;
         }
         input:focus, select:focus {
             outline: none;
             border-color: #2563eb;
             box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
         }
-
         .calc-main-btn {
             width: 100%;
             padding: 8px;
@@ -364,6 +369,7 @@
             justify-content: center;
             gap: 6px;
             transition: background 0.2s ease;
+            min-height: 44px;
         }
         .calc-main-btn:hover {
             background: #1d4ed8;
@@ -372,7 +378,6 @@
             background: #93c5fd;
             cursor: not-allowed;
         }
-
         .result-box {
             background: #f8fafc;
             border: 1px solid #e2e8f0;
@@ -456,6 +461,7 @@
             display: inline-flex;
             align-items: center;
             gap: 5px;
+            min-height: 44px;
         }
         .copy-btn:hover {
             background: #047857;
@@ -469,7 +475,6 @@
             font-size: 12px;
             color: #4a5568;
         }
-
         .chart-wrap {
             background: #fff;
             margin: 0 auto 30px;
@@ -488,7 +493,6 @@
             width: 100% !important;
             height: 220px !important;
         }
-
         .dynamic-hook {
             text-align: center;
             margin: 15px auto;
@@ -498,11 +502,13 @@
         .dynamic-hook a {
             color: #2563eb;
             text-decoration: none;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
         }
         .dynamic-hook a:hover {
             text-decoration: underline;
         }
-
         .content-section {
             padding: 30px 0;
         }
@@ -548,7 +554,6 @@
             font-size: 13px;
             color: #718096;
         }
-
         .faq-section {
             max-width: 700px;
             margin: 0 auto;
@@ -568,6 +573,7 @@
             justify-content: space-between;
             align-items: center;
             color: #2d3748;
+            min-height: 44px;
         }
         .faq-question.active {
             color: #2563eb;
@@ -584,7 +590,6 @@
             padding: 0 15px 15px;
             max-height: 600px;
         }
-
         .related-tools {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -624,8 +629,8 @@
             display: flex;
             align-items: center;
             gap: 4px;
+            min-height: 44px;
         }
-
         .disclaimer-block {
             background: #f8fafc;
             border: 1px solid #e2e8f0;
@@ -644,7 +649,6 @@
             color: #718096;
             line-height: 1.6;
         }
-
         footer {
             background: #1a202c;
             color: #cbd5e1;
@@ -691,6 +695,9 @@
             text-decoration: none;
             font-size: 12px;
             line-height: 1.6;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
         }
         .footer-copyright {
             text-align: center;
@@ -700,31 +707,18 @@
             font-size: 11px;
             color: #94a3b8;
         }
-
         @media (max-width: 480px) {
             .result-grid { grid-template-columns: 1fr; }
             .calc-col { min-width: 100%; }
             .feature-grid, .hero-features { grid-template-columns: 1fr; }
             .cross-tools-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-            .quick-buttons {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 8px;
-            }
-            .quick-btn {
-                min-height: 44px !important;
-                padding: 10px 4px !important;
-                font-size: 11px !important;
-                pointer-events: auto !important;
-            }
-            .calc-main-btn {
-                min-height: 44px !important;
-                font-size: 16px !important;
-            }
+            .quick-buttons { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .quick-btn { min-height: 44px !important; padding: 10px 4px !important; font-size: 11px !important; pointer-events: auto !important; }
+            .calc-main-btn { min-height: 44px !important; font-size: 16px !important; }
         }
     </style>
 </head>
 <body>
-
 <header>
     <div class="container header-inner">
         <a href="/" class="logo-group">
@@ -733,7 +727,6 @@
         </a>
     </div>
 </header>
-
 <div class="main-nav">
     <ul class="nav-list">
         <li><a href="/" class="active">Home</a></li>
@@ -745,44 +738,24 @@
         <li><a href="/disclaimer.html">Disclaimer</a></li>
     </ul>
 </div>
-
 <div class="container">
     <div class="ad-slot ad-top">Google Ads (Top)</div>
 </div>
-
 <div class="page-wrap">
-    <aside class="ad-left">
-        <div class="ad-slot">Left Side Ad</div>
-    </aside>
-
+    <aside class="ad-left"><div class="ad-slot">Left Side Ad</div></aside>
     <main>
         <section class="cross-tools-bar">
-            <h3 class="tools-title">
-                <i class="fa-solid fa-tools"></i> Smart Tools
-            </h3>
+            <h3 class="tools-title"><i class="fa-solid fa-tools"></i> Smart Tools</h3>
             <div class="cross-tools-grid">
-                <a href="https://compress.calcfincepro.com" class="cross-tool-card">
-                    <i class="fa-solid fa-image cross-tool-icon"></i><span>Image Compressor</span>
-                </a>
-                <a href="https://aitools.calcfincepro.com" class="cross-tool-card">
-                    <i class="fa-solid fa-wand-magic-sparkles cross-tool-icon"></i><span>AI Tools</span>
-                </a>
-                <a href="https://pdf.calcfincepro.com" class="cross-tool-card">
-                    <i class="fa-solid fa-file-pdf cross-tool-icon"></i><span>PDF Tools</span>
-                </a>
-                <a href="https://text.calcfincepro.com" class="cross-tool-card">
-                    <i class="fa-solid fa-file-lines cross-tool-icon"></i><span>Text Tools</span>
-                </a>
-                <a href="https://convert.calcfincepro.com" class="cross-tool-card">
-                    <i class="fa-solid fa-right-left cross-tool-icon"></i><span>Converter</span>
-                </a>
+                <a href="https://compress.calcfincepro.com" class="cross-tool-card"><i class="fa-solid fa-image cross-tool-icon"></i><span>Image Compressor</span></a>
+                <a href="https://aitools.calcfincepro.com" class="cross-tool-card"><i class="fa-solid fa-wand-magic-sparkles cross-tool-icon"></i><span>AI Tools</span></a>
+                <a href="https://pdf.calcfincepro.com" class="cross-tool-card"><i class="fa-solid fa-file-pdf cross-tool-icon"></i><span>PDF Tools</span></a>
+                <a href="https://text.calcfincepro.com" class="cross-tool-card"><i class="fa-solid fa-file-lines cross-tool-icon"></i><span>Text Tools</span></a>
+                <a href="https://convert.calcfincepro.com" class="cross-tool-card"><i class="fa-solid fa-right-left cross-tool-icon"></i><span>Converter</span></a>
             </div>
         </section>
-
-        <div id="calcAnchor">
-            <div class="calc-header">
-                <h3>Calculate Your Investment Growth</h3>
-            </div>
+        <div id="calcAnchor" fetchpriority="high">
+            <div class="calc-header"><h3>Calculate Your Investment Growth</h3></div>
             <div class="calc-card">
                 <div class="quick-fill">
                     <h3>QUICK-FILL SCENARIOS</h3>
@@ -793,47 +766,27 @@
                         <button class="quick-btn" data-preset="emergency"><i class="fa-solid fa-heart-pulse"></i> Emergency Fund</button>
                     </div>
                 </div>
-
                 <div class="calc-row">
-                    <div class="calc-col">
-                        <label>INITIAL INVESTMENT (USD)</label>
-                        <input type="number" min="0" step="0.01" id="initialInv" value="10000">
-                    </div>
-                    <div class="calc-col">
-                        <label>ANNUAL INTEREST RATE (%)</label>
-                        <input type="number" min="0" max="100" step="0.01" id="intRate" value="8">
-                    </div>
+                    <div class="calc-col"><label for="initialInv">INITIAL INVESTMENT (USD)</label><input type="number" min="0" step="0.01" id="initialInv" value="10000"></div>
+                    <div class="calc-col"><label for="intRate">ANNUAL INTEREST RATE (%)</label><input type="number" min="0" max="100" step="0.01" id="intRate" value="8"></div>
                 </div>
-
                 <div class="calc-row">
-                    <div class="calc-col">
-                        <label>INVESTMENT PERIOD (YEARS)</label>
-                        <input type="number" min="0" max="100" id="invYears" value="20">
-                    </div>
-                    <div class="calc-col">
-                        <label>MONTHLY DEPOSITS (USD)</label>
-                        <input type="number" min="0" step="0.01" id="monthDeposit" value="200">
-                    </div>
+                    <div class="calc-col"><label for="invYears">INVESTMENT PERIOD (YEARS)</label><input type="number" min="0" max="100" id="invYears" value="20"></div>
+                    <div class="calc-col"><label for="monthDeposit">MONTHLY DEPOSITS (USD)</label><input type="number" min="0" step="0.01" id="monthDeposit" value="200"></div>
                 </div>
-
                 <div class="calc-row">
                     <div class="calc-col">
-                        <label>COMPOUNDING FREQUENCY</label>
+                        <label for="compFreq">COMPOUNDING FREQUENCY</label>
                         <select id="compFreq">
                             <option value="1" selected>Compounded Annually</option>
                             <option value="12">Compounded Monthly</option>
                         </select>
                     </div>
                 </div>
-
-                <button class="calc-main-btn" id="calcBtn">
-                    <i class="fa-solid fa-arrows-rotate"></i> Calculate Now
-                </button>
-
+                <button class="calc-main-btn" id="calcBtn"><i class="fa-solid fa-arrows-rotate"></i> Calculate Now</button>
                 <div class="result-box" id="resultArea">
                     <h3 class="result-title">Your Investment Growth Results</h3>
                     <div class="result-subtitle">Based on compounding annually for <span id="resultYears">20</span> years.</div>
-
                     <div class="future-value-card">
                         <div>
                             <div class="future-value-label">FINAL VALUE</div>
@@ -841,7 +794,6 @@
                         </div>
                         <div class="future-value-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
                     </div>
-
                     <div class="result-grid">
                         <div class="result-small-card">
                             <div class="result-small-label">TOTAL CONTRIBUTIONS</div>
@@ -856,9 +808,7 @@
                             <div class="result-small-value blue" id="returnPct">0%</div>
                         </div>
                     </div>
-
                     <button class="copy-btn" id="copyResult"><i class="fa-solid fa-copy"></i> Copy Result</button>
-
                     <div class="dynamic-hook">
                         <a id="topHookLink" href="/guides.html#retirement">
                             <i class="fa-solid fa-lightbulb"></i> Practical advice for Investment growth
@@ -867,17 +817,14 @@
                     <div class="dynamic-hook">
                         <a href="/about.html"><i class="fa-solid fa-info-circle"></i> Want to learn our story? Explore About page</a>
                     </div>
-
                     <div class="result-note">* Results calculated using standard compound interest formula.</div>
                 </div>
             </div>
         </div>
-
         <div class="chart-wrap" aria-label="Investment balance growth line chart showing principal vs total balance with compound interest">
             <h3 class="chart-title">Investment Balance Growth Chart</h3>
             <canvas id="growthChart"></canvas>
         </div>
-
         <div class="dynamic-hook">
             <a id="bottomHookLink" href="/guides.html#retirement">
                 <i class="fa-solid fa-book-open"></i> Learn proven strategies to grow your savings faster
@@ -886,7 +833,6 @@
         <div class="dynamic-hook">
             <a href="/contact.html"><i class="fa-solid fa-envelope"></i> Got questions or feedback? Reach out via Contact</a>
         </div>
-
         <section class="hero-section">
             <div class="hero-badge"><i class="fa-solid fa-star"></i> TOP-RATED TOOLS</div>
             <h1 class="hero-title">Free Compound Interest Calculator</h1>
@@ -899,29 +845,39 @@
                 <div class="hero-feature-item"><i class="fa-solid fa-shield-halved"></i><span>100% Free & Secure</span></div>
             </div>
         </section>
-
         <section class="content-section">
             <h2 class="section-title">Why Use Our Finance Calculator</h2>
             <div class="feature-grid">
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
-                    <div class="feature-text"><h3>Plan Your Future</h3><p>Project long-term wealth growth and set clear financial goals.</p></div>
+                    <div class="feature-text">
+                        <h3>Plan Your Future</h3>
+                        <p>Project long-term wealth growth and set clear financial goals.</p>
+                    </div>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fa-solid fa-balance-scale"></i></div>
-                    <div class="feature-text"><h3>Smarter Decisions</h3><p>Compare different investment plans and choose the best option.</p></div>
+                    <div class="feature-text">
+                        <h3>Smarter Decisions</h3>
+                        <p>Compare different investment plans and choose the best option.</p>
+                    </div>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
-                    <div class="feature-text"><h3>Boost Earnings</h3><p>Maximize returns with the power of compound interest.</p></div>
+                    <div class="feature-text">
+                        <h3>Boost Earnings</h3>
+                        <p>Maximize returns with the power of compound interest.</p>
+                    </div>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <div class="feature-text"><h3>Free & Secure</h3><p>No registration, all calculations run locally in your browser.</p></div>
+                    <div class="feature-text">
+                        <h3>Free & Secure</h3>
+                        <p>No registration, all calculations run locally in your browser.</p>
+                    </div>
                 </div>
             </div>
         </section>
-
         <section class="content-section faq-section">
             <h2 class="section-title">Frequently Asked Questions</h2>
             <div class="faq-list">
@@ -979,7 +935,6 @@
                 </div>
             </div>
         </section>
-
         <section class="content-section">
             <h2 class="section-title">Related Financial Tools</h2>
             <div class="related-tools">
@@ -1005,22 +960,16 @@
                 </div>
             </div>
         </section>
-
         <div class="disclaimer-block">
             <h3><i class="fa-solid fa-circle-exclamation"></i> Disclaimer</h3>
             <p>This tool uses standard financial formulas for reference only. It is not professional financial advice, nor does it provide any loan offers or lending services. Please consult a professional financial advisor before making any financial decisions.</p>
         </div>
     </main>
-
-    <aside class="ad-right">
-        <div class="ad-slot">Right Side Ad</div>
-    </aside>
+    <aside class="ad-right"><div class="ad-slot">Right Side Ad</div></aside>
 </div>
-
 <div class="container">
     <div class="ad-slot ad-bottom">Google Ads (Bottom)</div>
 </div>
-
 <footer>
     <div class="footer-container">
         <div class="footer-seo-tags">
@@ -1055,7 +1004,6 @@
   <a href="https://text.calcfincepro.com/">Text Tools</a>
   <a href="https://convert.calcfincepro.com/">Convert Tools</a>
 </div>
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     let growthChart = null;
@@ -1074,48 +1022,46 @@ document.addEventListener('DOMContentLoaded', function() {
     const copyResult = document.getElementById('copyResult');
     const topHookLink = document.getElementById('topHookLink');
     const bottomHookLink = document.getElementById('bottomHookLink');
+    const quickBtns = document.querySelectorAll('.quick-btn');
+    const faqItems = document.querySelectorAll('.faq-question');
 
     const presetConfig = {
-        retirement: { initial:50000, rate:7.0, years:30, monthly:800, topText:"Handy tips for your Retirement plan", bottomText:"Discover smart ways to build your retirement savings", link:"/guides.html#retirement-fund" },
-        home: { initial:15000, rate:4.5, years:5, monthly:1000, topText:"Practical advice for Investment growth", bottomText:"Find reliable ways to save for your home down payment", link:"/guides.html#home-down-payment" },
-        college: { initial:10000, rate:6.0, years:15, monthly:300, topText:"Smart ideas for Education savings", bottomText:"Use proven tactics to fund future education costs", link:"/guides.html#education-fund" },
-        emergency: { initial:5000, rate:2.5, years:3, monthly:500, topText:"Learn useful tips for Emergency Fund", bottomText:"See how to build a solid emergency fund easily", link:"/guides.html#emergency-fund" }
+        retirement: { 
+            initial:50000, rate:7.0, years:30, monthly:800, 
+            topText:"Handy tips for your Retirement plan", 
+            bottomText:"Discover smart ways to build your retirement savings", 
+            link:"/guides.html#retirement-fund" 
+        },
+        home: { 
+            initial:15000, rate:4.5, years:5, monthly:1000, 
+            topText:"Practical advice for Investment growth", 
+            bottomText:"Find reliable ways to save for your home down payment", 
+            link:"/guides.html#home-down-payment" 
+        },
+        college: { 
+            initial:10000, rate:6.0, years:15, monthly:300, 
+            topText:"Smart ideas for Education savings", 
+            bottomText:"Use proven tactics to fund future education costs", 
+            link:"/guides.html#education-fund" 
+        },
+        emergency: { 
+            initial:5000, rate:2.5, years:3, monthly:500, 
+            topText:"Learn useful tips for Emergency Fund", 
+            bottomText:"See how to build a solid emergency fund easily", 
+            link:"/guides.html#emergency-fund" 
+        }
     };
 
+    // 格式化货币
     function formatCurrency(num) {
-        return new Intl.NumberFormat('en-US', { style:'currency', currency:'USD', minimumFractionDigits:2 }).format(num||0);
+        return new Intl.NumberFormat('en-US', { 
+            style:'currency', 
+            currency:'USD', 
+            minimumFractionDigits:2 
+        }).format(num || 0);
     }
 
-    function calculateTotal() {
-        const P = Number(initialInv.value)||0;
-        const rate = Number(intRate.value)||0;
-        const years = Number(invYears.value)||0;
-        const monthlyAdd = Number(monthDeposit.value)||0;
-        const compoundTimes = Number(compFreq.value);
-        resultYears.textContent = years;
-        const totalMonth = years*12;
-        const totalPaid = P + (monthlyAdd*totalMonth);
-        const annualRate = rate/100;
-        let finalAmount = 0;
-
-        if (compoundTimes === 1) {
-            if (annualRate === 0) finalAmount = totalPaid;
-            else finalAmount = P*Math.pow(1+annualRate,years) + monthlyAdd*12*(Math.pow(1+annualRate,years)-1)/annualRate;
-        } else {
-            const monthlyRate = annualRate/12;
-            if (monthlyRate === 0) finalAmount = totalPaid;
-            else finalAmount = P*Math.pow(1+monthlyRate,totalMonth) + monthlyAdd*(Math.pow(1+monthlyRate,totalMonth)-1)/monthlyRate;
-        }
-
-        const interest = finalAmount - totalPaid;
-        const pct = totalPaid>0 ? (interest/totalPaid*100).toFixed(2) : 0;
-        futureVal.textContent = formatCurrency(finalAmount);
-        totalContrib.textContent = formatCurrency(totalPaid);
-        totalInterest.textContent = formatCurrency(interest);
-        returnPct.textContent = pct+'%';
-        updateChart();
-    }
-
+    // 更新图表
     function updateChart() {
         const years = Number(invYears.value) || 20;
         const P = Number(initialInv.value) || 0;
@@ -1130,31 +1076,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
         for (let i = 0; i <= years; i++) {
             labels.push(i + 'Y');
-            const totalMonths = i * 12;
-            const principal = P + monthlyAdd * totalMonths;
-            principalData.push(Math.round(principal));
+            const currMonth = i * 12;
+            const currPrincipal = P + (monthlyAdd * currMonth);
+            principalData.push(currPrincipal);
 
-            let balance = P;
+            let currBalance = 0;
             if (compoundTimes === 1) {
                 if (annualRate === 0) {
-                    balance = principal;
+                    currBalance = currPrincipal;
                 } else {
-                    balance = P * Math.pow(1 + annualRate, i) +
-                              monthlyAdd * 12 * (Math.pow(1 + annualRate, i) - 1) / annualRate;
+                    currBalance = P * Math.pow(1 + annualRate, i)
+                        + monthlyAdd * 12 * (Math.pow(1 + annualRate, i) - 1) / annualRate;
                 }
             } else {
-                const months = i * 12;
                 const monthlyRate = annualRate / 12;
                 if (monthlyRate === 0) {
-                    balance = principal;
+                    currBalance = currPrincipal;
                 } else {
-                    balance = P * Math.pow(1 + monthlyRate, months) +
-                              monthlyAdd * (Math.pow(1 + monthlyRate, months) - 1) / monthlyRate;
+                    currBalance = P * Math.pow(1 + monthlyRate, currMonth)
+                        + monthlyAdd * (Math.pow(1 + monthlyRate, currMonth) - 1) / monthlyRate;
                 }
             }
-            balanceData.push(Math.round(balance));
+            balanceData.push(currBalance);
         }
 
+        // 销毁旧图表
         if (growthChart) {
             growthChart.destroy();
         }
@@ -1169,19 +1115,17 @@ document.addEventListener('DOMContentLoaded', function() {
                         label: 'Total Balance',
                         data: balanceData,
                         borderColor: '#2563eb',
-                        backgroundColor: 'rgba(37,99,235,0.1)',
+                        backgroundColor: 'rgba(37, 99, 235, 0.1)',
                         fill: true,
-                        tension: 0.3,
-                        borderWidth: 2
+                        tension: 0.3
                     },
                     {
-                        label: 'Total Contributions',
+                        label: 'Total Principal',
                         data: principalData,
                         borderColor: '#059669',
-                        backgroundColor: 'rgba(5,150,105,0.05)',
-                        fill: false,
-                        tension: 0.3,
-                        borderWidth: 1.5
+                        backgroundColor: 'rgba(5, 150, 105, 0.1)',
+                        fill: true,
+                        tension: 0.3
                     }
                 ]
             },
@@ -1190,61 +1134,91 @@ document.addEventListener('DOMContentLoaded', function() {
                 maintainAspectRatio: false,
                 plugins: {
                     legend: {
-                        position: 'top',
-                        labels: {
-                            boxWidth: 12,
-                            font: { size: 12 }
-                        }
+                        position: 'top'
                     }
                 },
                 scales: {
                     y: {
-                        beginAtZero: true,
-                        ticks: {
-                            callback: function(value) {
-                                return '$' + value.toLocaleString();
-                            }
-                        }
+                        beginAtZero: true
                     }
                 }
             }
         });
     }
 
-    calcBtn.addEventListener('click', calculateTotal);
+    // 核心计算
+    function calculateTotal() {
+        const P = Number(initialInv.value) || 0;
+        const rate = Number(intRate.value) || 0;
+        const years = Number(invYears.value) || 0;
+        const monthlyAdd = Number(monthDeposit.value) || 0;
+        const compoundTimes = Number(compFreq.value);
+        resultYears.textContent = years;
 
-    copyResult.addEventListener('click', function() {
-        const text = `Final Value: ${futureVal.textContent}\nTotal Contributions: ${totalContrib.textContent}\nTotal Interest: ${totalInterest.textContent}\nInterest Ratio: ${returnPct.textContent}`;
-        navigator.clipboard.writeText(text).then(() => {
-            const oldText = copyResult.innerHTML;
-            copyResult.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
-            setTimeout(() => { copyResult.innerHTML = oldText; }, 1500);
-        });
-    });
+        const totalMonth = years * 12;
+        const totalPaid = P + (monthlyAdd * totalMonth);
+        const annualRate = rate / 100;
+        let finalAmount = 0;
 
-    document.querySelectorAll('.quick-btn').forEach(btn => {
+        if (compoundTimes === 1) {
+            if (annualRate === 0) {
+                finalAmount = totalPaid;
+            } else {
+                finalAmount = P * Math.pow(1 + annualRate, years)
+                    + monthlyAdd * 12 * (Math.pow(1 + annualRate, years) - 1) / annualRate;
+            }
+        } else {
+            const monthlyRate = annualRate / 12;
+            if (monthlyRate === 0) {
+                finalAmount = totalPaid;
+            } else {
+                finalAmount = P * Math.pow(1 + monthlyRate, totalMonth)
+                    + monthlyAdd * (Math.pow(1 + monthlyRate, totalMonth) - 1) / monthlyRate;
+            }
+        }
+
+        const interest = finalAmount - totalPaid;
+        const pct = totalPaid > 0 ? (interest / totalPaid * 100).toFixed(2) : 0;
+
+        futureVal.textContent = formatCurrency(finalAmount);
+        totalContrib.textContent = formatCurrency(totalPaid);
+        totalInterest.textContent = formatCurrency(interest);
+        returnPct.textContent = pct + '%';
+
+        updateChart();
+    }
+
+    // 快捷预设按钮
+    quickBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             const key = this.dataset.preset;
-            const data = presetConfig[key];
-            initialInv.value = data.initial;
-            intRate.value = data.rate;
-            invYears.value = data.years;
-            monthDeposit.value = data.monthly;
-            topHookLink.textContent = data.topText;
-            topHookLink.href = data.link;
-            bottomHookLink.textContent = data.bottomText;
-            bottomHookLink.href = data.link;
+            const cfg = presetConfig[key];
+            if (!cfg) return;
+
+            initialInv.value = cfg.initial;
+            intRate.value = cfg.rate;
+            invYears.value = cfg.years;
+            monthDeposit.value = cfg.monthly;
+
+            topHookLink.textContent = `<i class="fa-solid fa-lightbulb"></i> ${cfg.topText}`;
+            topHookLink.href = cfg.link;
+            bottomHookLink.textContent = `<i class="fa-solid fa-book-open"></i> ${cfg.bottomText}`;
+            bottomHookLink.href = cfg.link;
+
             calculateTotal();
         });
     });
 
-    document.querySelectorAll('.faq-question').forEach(q => {
-        q.addEventListener('click', () => {
-            const ans = q.nextElementSibling;
-            const icon = q.querySelector('i');
-            ans.classList.toggle('show');
-            q.classList.toggle('active');
-            if (ans.classList.contains('show')) {
+    // FAQ 折叠展开
+    faqItems.forEach(question => {
+        question.addEventListener('click', function() {
+            const answer = this.nextElementSibling;
+            const icon = this.querySelector('i');
+
+            this.classList.toggle('active');
+            answer.classList.toggle('show');
+
+            if (answer.classList.contains('show')) {
                 icon.classList.remove('fa-chevron-down');
                 icon.classList.add('fa-chevron-up');
             } else {
@@ -1254,6 +1228,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // 计算按钮点击
+    calcBtn.addEventListener('click', calculateTotal);
+
+    // 复制结果
+    copyResult.addEventListener('click', function() {
+        const text = `
+Final Value: ${futureVal.textContent}
+Total Contributions: ${totalContrib.textContent}
+Total Interest: ${totalInterest.textContent}
+Interest Ratio: ${returnPct.textContent}
+        `.trim();
+
+        navigator.clipboard.writeText(text).then(() => {
+            const oldText = this.innerHTML;
+            this.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+            setTimeout(() => {
+                this.innerHTML = oldText;
+            }, 1500);
+        });
+    });
+
+    // 页面初始化执行一次
     calculateTotal();
 });
 </script>
