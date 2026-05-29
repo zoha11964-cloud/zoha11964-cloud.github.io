@@ -29,6 +29,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
         body {
             font-family: 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
@@ -304,6 +305,8 @@
             margin-top: 0;
         }
         .quick-btn {
+            position: relative;
+            z-index: 999;
             padding: 8px 5px;
             border: 1px solid #cbd5e0;
             background: #fff;
@@ -709,25 +712,24 @@
             color: #94a3b8;
         }
 
+        /* MOBILE FIX —— 只修复手机端，不影响电脑 */
         @media (max-width: 480px) {
-            .hero-title {
-                font-size: 26px;
+            .hero-title { font-size: 26px; }
+            .result-grid { grid-template-columns: 1fr; }
+            .calc-col { min-width: 100%; }
+            .feature-grid, .hero-features { grid-template-columns: 1fr; }
+            .cross-tools-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .quick-buttons { grid-template-columns: repeat(2, 1fr); }
+            
+            .quick-btn {
+                min-height: 44px !important;
+                padding: 12px 8px !important;
+                font-size: 14px !important;
+                pointer-events: auto !important;
             }
-            .result-grid {
-                grid-template-columns: 1fr;
-            }
-            .calc-col {
-                min-width: 100%;
-            }
-            .feature-grid, .hero-features {
-                grid-template-columns: 1fr;
-            }
-            .cross-tools-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-            }
-            .quick-buttons {
-                grid-template-columns: repeat(2, 1fr);
+            .calc-main-btn {
+                min-height: 44px !important;
+                font-size: 16px !important;
             }
         }
     </style>
@@ -1030,7 +1032,6 @@
                     </div>
                 </div>
 
-                <!-- 👇 这里是我纯新增的 5 条 FAQ，没有改动任何原有代码 -->
                 <div class="faq-item">
                     <div class="faq-question">
                         Why is compound interest important for long term savings?
@@ -1179,12 +1180,9 @@
 </div>
 
 <script>
-// 所有JS代码在DOM加载完成后执行，确保预览也能正常触发事件
 document.addEventListener('DOMContentLoaded', function() {
-    // 全局图表变量
     let growthChart = null;
 
-    // 绑定页面DOM元素
     const initialInv = document.getElementById('initialInv');
     const intRate = document.getElementById('intRate');
     const invYears = document.getElementById('invYears');
@@ -1200,56 +1198,39 @@ document.addEventListener('DOMContentLoaded', function() {
     const topHookLink = document.getElementById('topHookLink');
     const bottomHookLink = document.getElementById('bottomHookLink');
 
-    // 四大场景预设参数 + 双动态链接配置
     const presetConfig = {
         retirement: {
-            initial: 50000,
-            rate: 7.0,
-            years: 30,
-            monthly: 800,
-            topText: "<i class=\"fa-solid fa-lightbulb\"></i> Handy tips for your Retirement plan",
-            bottomText: "<i class=\"fa-solid fa-book-open\"></i> Discover smart ways to build your retirement savings",
+            initial: 50000, rate: 7.0, years: 30, monthly: 800,
+            topText: "<i class='fa-solid fa-lightbulb'></i> Handy tips for your Retirement plan",
+            bottomText: "<i class='fa-solid fa-book-open'></i> Discover smart ways to build your retirement savings",
             link: "/guides.html#retirement-fund"
         },
         home: {
-            initial: 15000,
-            rate: 4.5,
-            years: 5,
-            monthly: 1000,
-            topText: "<i class=\"fa-solid fa-lightbulb\"></i> Practical advice for Investment growth",
-            bottomText: "<i class=\"fa-solid fa-book-open\"></i> Find reliable ways to save for your home down payment",
+            initial: 15000, rate: 4.5, years: 5, monthly: 1000,
+            topText: "<i class='fa-solid fa-lightbulb'></i> Practical advice for Investment growth",
+            bottomText: "<i class='fa-solid fa-book-open'></i> Find reliable ways to save for your home down payment",
             link: "/guides.html#home-down-payment"
         },
         college: {
-            initial: 10000,
-            rate: 6.0,
-            years: 15,
-            monthly: 300,
-            topText: "<i class=\"fa-solid fa-lightbulb\"></i> Smart ideas for Education savings",
-            bottomText: "<i class=\"fa-solid fa-book-open\"></i> Use proven tactics to fund future education costs",
+            initial: 10000, rate: 6.0, years: 15, monthly: 300,
+            topText: "<i class='fa-solid fa-lightbulb'></i> Smart ideas for Education savings",
+            bottomText: "<i class='fa-solid fa-book-open'></i> Use proven tactics to fund future education costs",
             link: "/guides.html#education-fund"
         },
         emergency: {
-            initial: 5000,
-            rate: 2.5,
-            years: 3,
-            monthly: 500,
-            topText: "<i class=\"fa-solid fa-lightbulb\"></i> Learn useful tips for Emergency Fund",
-            bottomText: "<i class=\"fa-solid fa-book-open\"></i> See how to build a solid emergency fund easily",
+            initial: 5000, rate: 2.5, years: 3, monthly: 500,
+            topText: "<i class='fa-solid fa-lightbulb'></i> Learn useful tips for Emergency Fund",
+            bottomText: "<i class='fa-solid fa-book-open'></i> See how to build a solid emergency fund easily",
             link: "/guides.html#emergency-fund"
         }
     };
 
-    // 货币格式化
     function formatCurrency(num) {
         return new Intl.NumberFormat('en-US', {
-            style: 'currency',
-            currency: 'USD',
-            minimumFractionDigits: 2
+            style: 'currency', currency: 'USD', minimumFractionDigits: 2
         }).format(num || 0);
     }
 
-    // 核心计算函数
     function calculateTotal() {
         const P = Number(initialInv.value) || 0;
         const rate = Number(intRate.value) || 0;
@@ -1261,39 +1242,27 @@ document.addEventListener('DOMContentLoaded', function() {
         const totalMonth = years * 12;
         const totalPaid = P + (monthlyAdd * totalMonth);
         const annualRate = rate / 100;
-
         let finalAmount = 0;
+
         if (compoundTimes === 1) {
-            if (annualRate === 0) {
-                finalAmount = P + (monthlyAdd * totalMonth);
-            } else {
-                finalAmount = P * Math.pow(1 + annualRate, years)
-                    + monthlyAdd * 12 * (Math.pow(1 + annualRate, years) - 1) / annualRate;
-            }
+            if (annualRate === 0) finalAmount = P + (monthlyAdd * totalMonth);
+            else finalAmount = P * Math.pow(1 + annualRate, years) + monthlyAdd * 12 * (Math.pow(1 + annualRate, years) - 1) / annualRate;
         } else {
             const monthlyRate = annualRate / 12;
-            if (monthlyRate === 0) {
-                finalAmount = P + (monthlyAdd * totalMonth);
-            } else {
-                finalAmount = P * Math.pow(1 + monthlyRate, totalMonth)
-                    + monthlyAdd * (Math.pow(1 + monthlyRate, totalMonth) - 1) / monthlyRate;
-            }
+            if (monthlyRate === 0) finalAmount = P + (monthlyAdd * totalMonth);
+            else finalAmount = P * Math.pow(1 + monthlyRate, totalMonth) + monthlyAdd * (Math.pow(1 + monthlyRate, totalMonth) - 1) / monthlyRate;
         }
 
         const interest = finalAmount - totalPaid;
         const pct = totalPaid > 0 ? (interest / totalPaid * 100).toFixed(2) : 0;
 
-        // 回填计算结果
         futureVal.textContent = formatCurrency(finalAmount);
         totalContrib.textContent = formatCurrency(totalPaid);
         totalInterest.textContent = formatCurrency(interest);
         returnPct.textContent = pct + '%';
-
-        // 计算完成后强制更新图表
         updateChart();
     }
 
-    // 图表渲染函数
     function updateChart() {
         const years = Number(invYears.value) || 20;
         const P = Number(initialInv.value) || 0;
@@ -1312,139 +1281,78 @@ document.addEventListener('DOMContentLoaded', function() {
             let balance = 0;
 
             if (compoundTimes === 1) {
-                if (annualRate === 0) {
-                    balance = P + monthlyAdd * monthCount;
-                } else {
-                    balance = P * Math.pow(1 + annualRate, y)
-                        + monthlyAdd * 12 * (Math.pow(1 + annualRate, y) - 1) / annualRate;
-                }
+                if (annualRate === 0) balance = P + monthlyAdd * monthCount;
+                else balance = P * Math.pow(1 + annualRate, y) + monthlyAdd * 12 * (Math.pow(1 + annualRate, y) - 1) / annualRate;
             } else {
                 const monthlyRate = annualRate / 12;
-                if (monthlyRate === 0) {
-                    balance = P + monthlyAdd * monthCount;
-                } else {
-                    balance = P * Math.pow(1 + monthlyRate, monthCount)
-                        + monthlyAdd * (Math.pow(1 + monthlyRate, monthCount) - 1) / monthlyRate;
-                }
+                if (monthlyRate === 0) balance = P + monthlyAdd * monthCount;
+                else balance = P * Math.pow(1 + monthlyRate, monthCount) + monthlyAdd * (Math.pow(1 + monthlyRate, monthCount) - 1) / monthlyRate;
             }
             const principal = P + monthlyAdd * monthCount;
             balanceData.push(balance);
             principalData.push(principal);
         }
 
-        // 销毁旧图表，防止重叠
-        if (growthChart) {
-            growthChart.destroy();
-        }
+        if (growthChart) growthChart.destroy();
         const ctx = document.getElementById('growthChart').getContext('2d');
         growthChart = new Chart(ctx, {
             type: 'line',
             data: {
                 labels: labels,
                 datasets: [
-                    {
-                        label: 'Total Balance',
-                        data: balanceData,
-                        borderColor: '#2563eb',
-                        backgroundColor: 'rgba(37, 99, 235, 0.1)',
-                        fill: true,
-                        tension: 0.3
-                    },
-                    {
-                        label: 'Total Principal',
-                        data: principalData,
-                        borderColor: '#64748b',
-                        backgroundColor: 'rgba(100, 116, 139, 0.05)',
-                        fill: true,
-                        tension: 0.3
-                    }
+                    { label: 'Total Balance', data: balanceData, borderColor: '#2563eb', backgroundColor: 'rgba(37,99,235,0.1)', fill: true, tension: 0.3 },
+                    { label: 'Total Principal', data: principalData, borderColor: '#64748b', backgroundColor: 'rgba(100,116,139,0.05)', fill: true, tension: 0.3 }
                 ]
             },
             options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'top'
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { position: 'top' } },
+                scales: { y: { beginAtZero: true } }
             }
         });
     }
 
-    // 快捷按钮点击事件（修复预览无反应）
+    // ====== 手机端点击修复：同时支持 click + touchstart ======
     document.querySelectorAll('.quick-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const presetKey = this.dataset.preset;
-            const cfg = presetConfig[presetKey];
+        function run() {
+            const cfg = presetConfig[this.dataset.preset];
             if (!cfg) return;
-
-            // 填充输入框参数
             initialInv.value = cfg.initial;
             intRate.value = cfg.rate;
             invYears.value = cfg.years;
             monthDeposit.value = cfg.monthly;
-
-            // 同步更新上下动态钩子（文案+链接）
             topHookLink.innerHTML = cfg.topText;
             topHookLink.href = cfg.link;
             bottomHookLink.innerHTML = cfg.bottomText;
             bottomHookLink.href = cfg.link;
-
-            // 自动触发计算和图表更新
             calculateTotal();
-        });
+        }
+        btn.addEventListener('click', run);
+        btn.addEventListener('touchstart', function(e){e.preventDefault(); run.call(this);});
     });
 
-    // 计算按钮点击事件（修复结果为0）
     calcBtn.addEventListener('click', calculateTotal);
+    calcBtn.addEventListener('touchstart', function(e){e.preventDefault(); calculateTotal();});
 
-    // 复制结果功能
     copyResult.addEventListener('click', function() {
-        const text = `
-Initial Investment: $${initialInv.value}
-Annual Interest Rate: ${intRate.value}%
-Investment Period: ${invYears.value} years
-Monthly Deposits: $${monthDeposit.value}
-Compounding: ${compFreq.value === 1 ? 'Annually' : 'Monthly'}
----
-Final Value: ${futureVal.textContent}
-Total Contributions: ${totalContrib.textContent}
-Total Interest Earned: ${totalInterest.textContent}
-Interest Ratio: ${returnPct.textContent}
-        `;
+        const text = `Initial Investment: $${initialInv.value}\nAnnual Interest Rate: ${intRate.value}%\nInvestment Period: ${invYears.value} years\nMonthly Deposits: $${monthDeposit.value}\nCompounding: ${compFreq.value === 1 ? 'Annually' : 'Monthly'}\n---\nFinal Value: ${futureVal.textContent}\nTotal Contributions: ${totalContrib.textContent}\nTotal Interest Earned: ${totalInterest.textContent}\nInterest Ratio: ${returnPct.textContent}`;
         navigator.clipboard.writeText(text.trim()).then(() => {
             this.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
-            setTimeout(() => {
-                this.innerHTML = '<i class="fa-solid fa-copy"></i> Copy Result';
-            }, 1500);
+            setTimeout(() => this.innerHTML = '<i class="fa-solid fa-copy"></i> Copy Result', 1500);
         });
     });
 
-    // FAQ 折叠功能（修复预览无反应）
     document.querySelectorAll('.faq-question').forEach(question => {
         question.addEventListener('click', function() {
-            const answer = this.nextElementSibling;
-            const isActive = this.classList.contains('active');
-
-            // 关闭所有FAQ
-            document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
-            document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('show'));
-
-            // 打开当前FAQ
-            if (!isActive) {
-                this.classList.add('active');
-                answer.classList.add('show');
-            }
+            const ans = this.nextElementSibling;
+            const active = this.classList.contains('active');
+            document.querySelectorAll('.faq-question').forEach(q=>q.classList.remove('active'));
+            document.querySelectorAll('.faq-answer').forEach(a=>a.classList.remove('show'));
+            if (!active) { this.classList.add('active'); ans.classList.add('show'); }
         });
+        question.addEventListener('touchstart', e=>e.preventDefault());
     });
 
-    // 页面加载时初始化一次计算和图表
     calculateTotal();
 });
 </script>
