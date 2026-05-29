@@ -715,6 +715,32 @@
         .cross-tool-card { padding:1px 3px !important; min-height:40px !important; }
         .main-nav { padding:0 !important; }
         .nav-list li a { min-height:40px !important; padding:1px 6px !important; }
+
+    /* 你所有原来的 CSS 样式（不动） */
+    * { ... }
+    body { ... }
+    .cross-tools-bar { ... }
+    .dynamic-hook { ... }
+    /* ... 一直往下 ... */
+
+    /* 👇 你要加的补丁代码，直接贴在这里 👇 */
+    @media (max-width: 480px) {
+      .cross-tool-card {
+        min-width: 70px !important;
+        justify-content: center !important;
+      }
+      .result-grid .result-small-card {
+        width: 100% !important;
+        text-align: center !important;
+      }
+      .dynamic-hook a {
+        display: inline-flex !important;
+        align-items: center !important;
+        line-height: 1.2 !important;
+      }
+    }
+
+</style>
     </style>
 </head>
 <body>
