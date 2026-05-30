@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <!-- SEO Meta Optimized -->
     <title>Compound Interest Calculator - Free Online Investment & Savings Calculator</title>
     <meta name="description" content="Use our free compound interest calculator to estimate investment growth, savings returns and retirement funds. View visual growth charts with annual & monthly compounding.">
@@ -11,19 +14,41 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://calcfincepro.com/">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <!-- Performance: Preconnect Third-Party Domains -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+
+    <!-- Lazy Load Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+    <!-- Defer Non-Critical JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js" defer></script>
 
     <!-- Google Ads -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5761005665703697" crossorigin="anonymous"></script>
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-70W3ZXHHPY"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-70W3ZXHHPY');
+      gtag('config', 'G-70W3ZXHHPY', {send_page_view: false});
+    </script>
+
+    <!-- Schema.org Structured Data (SEO Rich Result) -->
+    <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"FinancialService",
+        "name":"Compound Interest Calculator",
+        "description":"Free online compound interest calculator for investment, savings & retirement planning with interactive growth chart.",
+        "provider":{"@type":"Organization","name":"Smart Finance"},
+        "url":"https://calcfincepro.com/"
+    }
     </script>
 
     <style>
@@ -796,29 +821,29 @@
 
                 <div class="calc-row">
                     <div class="calc-col">
-                        <label>INITIAL INVESTMENT (USD)</label>
+                        <label for="initialInv">INITIAL INVESTMENT (USD)</label>
                         <input type="number" min="0" step="0.01" id="initialInv" value="10000">
                     </div>
                     <div class="calc-col">
-                        <label>ANNUAL INTEREST RATE (%)</label>
+                        <label for="intRate">ANNUAL INTEREST RATE (%)</label>
                         <input type="number" min="0" max="100" step="0.01" id="intRate" value="8">
                     </div>
                 </div>
 
                 <div class="calc-row">
                     <div class="calc-col">
-                        <label>INVESTMENT PERIOD (YEARS)</label>
+                        <label for="invYears">INVESTMENT PERIOD (YEARS)</label>
                         <input type="number" min="0" max="100" id="invYears" value="20">
                     </div>
                     <div class="calc-col">
-                        <label>MONTHLY DEPOSITS (USD)</label>
+                        <label for="monthDeposit">MONTHLY DEPOSITS (USD)</label>
                         <input type="number" min="0" step="0.01" id="monthDeposit" value="200">
                     </div>
                 </div>
 
                 <div class="calc-row">
                     <div class="calc-col">
-                        <label>COMPOUNDING FREQUENCY</label>
+                        <label for="compFreq">COMPOUNDING FREQUENCY</label>
                         <select id="compFreq">
                             <option value="1" selected>Compounded Annually</option>
                             <option value="12">Compounded Monthly</option>
