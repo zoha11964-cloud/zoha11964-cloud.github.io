@@ -2,11 +2,12 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 全局视口+安全区域适配：解决OPPO、Safari底部导航栏遮挡 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- SEO Meta Optimized -->
+    <!-- SEO Meta -->
     <title>Compound Interest Calculator - Free Online Investment & Savings Calculator</title>
     <meta name="description" content="Use our free compound interest calculator to estimate investment growth, savings returns and retirement funds. View visual growth charts with annual & monthly compounding.">
     <meta name="keywords" content="compound interest calculator, investment calculator, savings calculator, retirement calculator, compound interest formula">
@@ -14,23 +15,21 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://calcfincepro.com/">
 
-    <!-- Performance: Preconnect Third-Party Domains -->
+    <!-- 预连接第三方域名，提升加载速度 -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 
-    <!-- Lazy Load Font Awesome -->
+    <!-- 延迟加载字体图标 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
-    <!-- Defer Non-Critical JS -->
+    <!-- 延迟加载图表JS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js" defer></script>
 
-    <!-- Google Ads -->
+    <!-- 广告与统计脚本 -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5761005665703697" crossorigin="anonymous"></script>
-
-    <!-- Google tag -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-70W3ZXHHPY"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -39,7 +38,7 @@
       gtag('config', 'G-70W3ZXHHPY', {send_page_view: false});
     </script>
 
-    <!-- Schema.org Structured Data (SEO Rich Result) -->
+    <!-- 结构化数据 SEO -->
     <script type="application/ld+json">
     {
         "@context":"https://schema.org",
@@ -63,6 +62,8 @@
             background: #f5f7fa;
             color: #2d3748;
             line-height: 1.6;
+            /* 适配iOS/安卓底部安全区域 */
+            padding-bottom: env(safe-area-inset-bottom);
         }
         .container {
             max-width: 1200px;
@@ -223,7 +224,7 @@
             background: #dbeafe;
             color: #2563eb;
             transform: translateY(-1px);
-            box-shadow: 0 3px 6px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.12);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0.12);
         }
         .cross-tool-icon {
             font-size: 15px;
@@ -675,6 +676,8 @@
             color: #cbd5e1;
             padding: 20px 15px 15px;
             font-size: 13px;
+            /* 底部安全区域兼容 */
+            padding-bottom: calc(15px + env(safe-area-inset-bottom));
         }
         .footer-container {
             max-width: 1000px;
@@ -726,6 +729,55 @@
             color: #94a3b8;
         }
 
+        /* 深色模式全局适配：解决按钮看不清、配色发灰问题 */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #121212;
+                color: #e2e8f0;
+            }
+            header, .cross-tools-bar, .hero-section, .calc-card, .chart-wrap, .faq-item, .feature-card, .tool-card, .disclaimer-block {
+                background-color: #1e1e1e !important;
+                border-color: #333 !important;
+            }
+            .calc-header {
+                background: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
+            }
+            .calc-main-btn {
+                background-color: #3b82f6 !important;
+                color: #ffffff !important;
+            }
+            .calc-main-btn:hover {
+                background-color: #2563eb !important;
+            }
+            input, select {
+                background-color: #262626 !important;
+                color: #e2e8f0 !important;
+                border-color: #444 !important;
+            }
+            .result-box {
+                background-color: #1e1e1e !important;
+                border-color: #333 !important;
+            }
+            .result-small-card {
+                background-color: #262626 !important;
+                border-color: #444 !important;
+            }
+            .result-title, .section-title, .feature-text h3, .tool-header h3, .disclaimer-block h3 {
+                color: #e2e8f0 !important;
+            }
+            .quick-btn {
+                background-color: #262626 !important;
+                color: #e2e8f0 !important;
+                border-color: #444 !important;
+            }
+            .quick-btn:hover {
+                background-color: #333 !important;
+                border-color: #3b82f6 !important;
+                color: #3b82f6 !important;
+            }
+        }
+
+        /* 小屏手机适配，增大按钮点击区域 */
         @media (max-width: 480px) {
             .result-grid { grid-template-columns: 1fr; }
             .calc-col { min-width: 100%; }
@@ -749,7 +801,6 @@
     </style>
 </head>
 <body>
-
 <header>
     <div class="container header-inner">
         <a href="/" class="logo-group">
@@ -876,8 +927,7 @@
                             <div class="result-small-label">TOTAL INTEREST EARNED</div>
                             <div class="result-small-value" id="totalInterest">$0.00</div>
                         </div>
-                        <div class="result-small-card">
-                            <div class="result-small-label">INTEREST RATIO (%)</div>
+                        <div class="result-small-label">
                             <div class="result-small-value blue" id="returnPct">0%</div>
                         </div>
                     </div>
@@ -1080,7 +1130,6 @@
   <a href="https://text.calcfincepro.com/">Text Tools</a>
   <a href="https://convert.calcfincepro.com/">Convert Tools</a>
 </div>
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     let growthChart = null;
@@ -1247,38 +1296,50 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // 快捷填充按钮
     document.querySelectorAll('.quick-btn').forEach(btn => {
         btn.addEventListener('click', function() {
             const key = this.dataset.preset;
-            const data = presetConfig[key];
-            initialInv.value = data.initial;
-            intRate.value = data.rate;
-            invYears.value = data.years;
-            monthDeposit.value = data.monthly;
-            topHookLink.textContent = data.topText;
-            topHookLink.href = data.link;
-            bottomHookLink.textContent = data.bottomText;
-            bottomHookLink.href = data.link;
+            const cfg = presetConfig[key];
+            if(!cfg) return;
+            initialInv.value = cfg.initial;
+            intRate.value = cfg.rate;
+            invYears.value = cfg.years;
+            monthDeposit.value = cfg.monthly;
+            topHookLink.textContent = `<i class="fa-solid fa-lightbulb"></i> ${cfg.topText}`;
+            topHookLink.href = cfg.link;
+            bottomHookLink.textContent = `<i class="fa-solid fa-book-open"></i> ${cfg.bottomText}`;
+            bottomHookLink.href = cfg.link;
             calculateTotal();
         });
     });
 
-    document.querySelectorAll('.faq-question').forEach(q => {
-        q.addEventListener('click', () => {
-            const ans = q.nextElementSibling;
-            const icon = q.querySelector('i');
-            ans.classList.toggle('show');
-            q.classList.toggle('active');
-            if (ans.classList.contains('show')) {
-                icon.classList.remove('fa-chevron-down');
-                icon.classList.add('fa-chevron-up');
-            } else {
-                icon.classList.remove('fa-chevron-up');
-                icon.classList.add('fa-chevron-down');
+    // FAQ 展开收起
+    document.querySelectorAll('.faq-question').forEach(item => {
+        item.addEventListener('click', function() {
+            const answer = this.nextElementSibling;
+            const icon = this.querySelector('i');
+            const parent = this.closest('.faq-item');
+
+            // 关闭其他
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.classList.remove('active');
+                q.nextElementSibling.classList.remove('show');
+                q.querySelector('i').classList.replace('fa-chevron-up','fa-chevron-down');
+            });
+
+            // 切换当前
+            this.classList.toggle('active');
+            answer.classList.toggle('show');
+            if(answer.classList.contains('show')){
+                icon.classList.replace('fa-chevron-down','fa-chevron-up');
+            }else{
+                icon.classList.replace('fa-chevron-up','fa-chevron-down');
             }
         });
     });
 
+    // 初始执行一次计算
     calculateTotal();
 });
 </script>
